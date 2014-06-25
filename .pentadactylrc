@@ -1,0 +1,16 @@
+" config file for the Firefox pentadactyl plugin
+
+" remove menus/toolbars/etc
+set guioptions=
+set guioptions+=cCNs
+
+" incremental find
+set incfind
+
+" default search engine
+set defsearch=google
+
+" this will need to be on your system
+colorscheme simple_dark
+hi -append StatusLine color:#ffffff
+
