@@ -32,6 +32,7 @@ set fo=tcqnj
 set t_Co=256
 set bg=dark
 colorscheme jellybeans
+"colorscheme slate
 
 "set for auto handling of folds
 "au BufWinLeave * mkview
