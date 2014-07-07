@@ -26,3 +26,8 @@ NOTES
 -----
 
 I might need to chuck this and start over.  This is a test.
+
+
+TO-DO
+-----
+Create an install script that creates the symlinks in the new system.
