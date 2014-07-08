@@ -1,0 +1,9 @@
+--- Log opened Fri Feb 22 08:53:39 2013
+08:53 Irssi: Starting query in localhost with jabber_oauth
+08:53 jabber_oa Open this URL in your browser to authenticate: https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/googletalk&response_type=code&redirect_uri=urn:ietf:wg:oauth:2.0:oob&client_id=783993391592.apps.googleusercontent.com
+08:53 jabber_oa Respond to this message with the returned authorization token.
+08:53      jhar resp
+08:53 jabber_oa Open this URL in your browser to authenticate: https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/googletalk&response_type=code&redirect_uri=urn:ietf:wg:oauth:2.0:oob&client_id=783993391592.apps.googleusercontent.com
+08:53 jabber_oa Respond to this message with the returned authorization token.
+08:58      jhar 4/AYMWqSrjH8GEnHAx0c55mctlFkIX.4s94p9NRsbwcuJJVnL49Cc-i69QHegI
+--- Log closed Fri Feb 22 09:03:06 2013
