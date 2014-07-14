@@ -30,22 +30,24 @@ border_width 1
 draw_outline no
 draw_shades no
 
+format_human_readable
 cpu_avg_samples 2
 default_color white
-default_outline_color white
-default_shade_color white
+default_outline_color blue
+default_shade_color yellow
+outlinecolor blue
 
 draw_borders no
 stippled_borders 0
-draw_graph_borders yes
-show_graph_scale no
+draw_graph_borders no
+show_graph_scale yes
 show_graph_range no
 
 use_xft yes
 xftfont Ubuntu Mono:size=9
-gap_x 5
-gap_y 60
-minimum_size 250 120
+gap_x 10
+gap_y 30
+minimum_size 150 120
 net_avg_samples 2
 no_buffers yes
 out_to_console no
@@ -65,23 +67,55 @@ uppercase no
 use_spacer none
 
 TEXT
-${scroll 16 $nodename - $sysname $kernel on $machine | }
-$hr
-${color grey}Uptime:$color $uptime
-${color grey}Frequency (in MHz):$color $freq
-${color grey}Frequency (in GHz):$color $freq_g
-${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}
-${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
-${color grey}CPU Usage:$color $cpu% ${cpubar 4}
-${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
-$hr
-${color grey}File systems:
- / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
-${color grey}Networking:
-Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
-$hr
-${color grey}Name              PID   CPU%   MEM%
-${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
-${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
-${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
-${color lightgrey} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+#
+# ========================= GENERAL SYSTEM =================================
+#${scroll 40 $nodename - $sysname $kernel on $machine | }
+${color blue}
+${alignr 17} $nodename
+${alignr 17} $kernel
+${alignr 17} $machine
+$color
+${color grey}Time:     ${color white} ${time %H:%M:%S %Z}
+${color grey}Uptime:   ${color yellow} $uptime
+#
+# ========================= CPU =================================
+${color ff0000}
+CPU 
+${color grey}Frequency:$color $freq_g GHz
+${color grey}CPU Usage:$color ${cpu 1}% ${color green} 
+${cpugraph 25,149 00ff00 ff0000 20 -t}
+${color grey}Load:$color ${loadavg 1}
+${loadgraph 25,149 00ff00 ff0000 20 -t -l}
+#${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
+#${color grey}Name              PID       CPU%   MEM%
+#${color white} ${top name 1} ${color lightgrey} ${top pid 1} ${color yellow} ${top cpu 1} ${top mem 1}
+#${color white} ${top name 2} ${color lightgrey} ${top pid 2} ${color yellow} ${top cpu 2} ${top mem 2}
+#${color white} ${top name 3} ${color lightgrey} ${top pid 3} ${color yellow} ${top cpu 3} ${top mem 3}
+#${color white} ${top name 4} ${color lightgrey} ${top pid 4} ${color yellow} ${top cpu 4} ${top mem 4}
+#
+# 
+# ========================= MEMORY =================================
+${color ff0000}
+MEMORY
+${color grey}RAM Usage:
+$color $mem/$memmax - $memperc% ${color green} 
+${membar 6}
+${color grey}Swap Usage:
+$color $swap/$swapmax - $swapperc% ${color green} 
+${swapbar 6} $color
+# 
+# ========================= FILE SYSTEM =================================
+${color ff0000}
+FILE SYSTEM
+${color grey} ${fs_used /}/${fs_size /} - ${fs_used_perc /}% ${color green} 
+${fs_bar 6 /} $color
+# 
+# ========================= NETWORKING =================================
+${color ff0000}
+NETWORKING
+${color lightgrey}Local: ${addr eth0}
+${color lightgrey}GW:    ${gw_ip}
+Up:${color green} ${upspeed eth0} $color
+${upspeedgraph eth0 25,149 00ff00 ff0000 20 -t}
+${color grey}Down:$color ${downspeed eth0}
+${downspeedgraph eth0 25,149 00ff00 ff0000 20 -t}
