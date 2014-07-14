@@ -11,6 +11,16 @@ my home directory to the config files here.  I *could* just create a home
 directory repo, but everything gets dumped there and I would need to work with
 my ignore file.  This seems simpler at the moment.
 
+Simlinks:
+- .bashrc
+- .vimrc
+- .vim/
+- .tmux.conf
+- .tmux/
+- .pentadactylrc
+- .pentadactyl/
+- .conkyrc
+
 Linux vs. FreeBSD
 -----------------
 
@@ -21,6 +31,17 @@ effect my scripts (e.g. ifconfig formatting) that would require additional
 forks as well. **OR** if there are few enough files, I could include all here
 and just symlink to the ones I want.
 
+Vim
+---
+
+I have included the CSApprox (for terminal vim colorschemes) in the .vim
+directory.  On Ubuntu, the CSApprox.vim plugin file was missing a statement
+that setup the Normal highlight causing a runtime error.  The included version
+has the patch installed.
+
+I have also included the jellybeans colorscheme file.  This will need to be
+moved to /usr/share/vim/vim7x/colors/ or wherever your distro installs
+colorschemes.  Currently, .vimrc sets this as the default.
 
 NOTES
 -----
