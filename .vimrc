@@ -25,8 +25,11 @@ set foldcolumn=3
 set fo=tcqnj
 
 " GUI setup for gvim (minimal) 
-"set guioptions=
-"set guifont=consolas
+set guioptions=
+"Windows...
+"set guifont=consolas:h10
+"Linux...
+set guifont=Ubuntu\ Mono\ 10
 
 " Colors
 set t_Co=256

@@ -73,9 +73,9 @@ ${voffset 6}${color 6c6c6c}Uptime:   ${color white} $uptime
 # ========================= CPU =================================
 ${voffset 12}${font DroidSans:bold:italic:size=9}${color green}CPU${offset 3}${voffset -2}${hr 2}${font} 
 ${voffset 6}${color 6c6c6c}Freq: ${color white}$freq_g GHz ${color 6c6c6c}at:${color white} ${cpu 1}% ${color white} 
-${cpugraph 25,149 437019 00ff00 20 -t}
+${cpugraph 25,149 437019 00ff00 100 -t}
 ${color 6c6c6c}Load:${color white} ${loadavg 1}
-${loadgraph 25,149 437019 00ff00 20 -t -l}
+${loadgraph 25,149 437019 00ff00 100 -t -l}
 # PROCESS STUFF, removed for now because it's too wide
 ${color 6c6c6c}Proc's:${color white} $processes  ${color 6c6c6c}Running:${color white} $running_processes
 ${voffset 6}${color 6c6c6c}Name             PID    CPU% MEM%
@@ -104,6 +104,6 @@ ${voffset 20}${font DroidSans:bold:italic:size=9}${color green}NETWORKING${offse
 ${voffset 6}${color 6c6c6c}Local: ${color white} ${addr eth0}
 ${voffset 3}${color 6c6c6c}GW:    ${color white} ${gw_ip}
 ${voffset 6}${color 6c6c6c}Up:${color white} ${upspeed eth0} ${color white}
-${upspeedgraph eth0 25,149 437019 00ff00 20 -t}
+${upspeedgraph eth0 25,149 437019 00ff00 100 -t}
 ${color 6c6c6c}Down:${color white} ${downspeed eth0}
 ${downspeedgraph eth0 25,149 437019 00ff00 20 -t}
