@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/har/Notes'
 let g:netrw_dirhist_2='/home/har/KST/Allegion/AllegionGateway/test/validation/POC_0528/src'
 let g:netrw_dirhist_3='/home/har'
+let g:netrw_dirhist_4='/home/har/eclipse_64bit/configuration/.settings'
