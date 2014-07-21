@@ -14,6 +14,9 @@ alias td="tmux kill-session -t"
 # tmux needs this for 256 colors
 export TERM="screen-256color"
 
+# for cygwin
+source linux-config/.minttyrc
+
 # my standard prompt
 PS1="\[\033[32m\]\u@\[\033[36m\]\h:\[\033[34m\]\w\[\033[37m\] "
 
