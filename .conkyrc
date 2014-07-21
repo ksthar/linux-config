@@ -11,9 +11,7 @@ background no
 format_human_readable
 cpu_avg_samples 2
 default_color 6c6c6c
-default_outline_color 447799
 default_shade_color yellow
-outlinecolor blue
 
 # BORDERS AND OUTLINES
 border_width 1

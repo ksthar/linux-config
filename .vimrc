@@ -8,6 +8,7 @@
 " use zR to open all folds, zM to close all folds.
 "
 " General 
+set nocompatible
 syntax on
 set number
 set ruler
@@ -15,6 +16,8 @@ set ts=2
 set sw=2
 set numberwidth=6
 set foldcolumn=3
+set modeline
+set modelines=5
 
 " Special Options 
 " t = auto-wrap text using textwidth
