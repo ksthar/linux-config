@@ -16,7 +16,8 @@ export TERM="screen-256color"
 
 # for cygwin
 if [ "$(uname -o)" == 'Cygwin' ]; then 
-	source linux-config/.minttyrc;
+	source linux-config/.minttyrc
+	alias vi="vim";
 fi
 
 # my standard prompt
