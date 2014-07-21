@@ -31,6 +31,12 @@ effect my scripts (e.g. ifconfig formatting) that would require additional
 forks as well. **OR** if there are few enough files, I could include all here
 and just symlink to the ones I want.
 
+Cygwin
+------
+I have added support for Cygwin.  The .bashrc file checks for a cywin install
+(uname -o) to customize.  This is a possible solution to the Linux/FBSD issue
+as well, but has not been implemented yet.
+
 Vim
 ---
 
