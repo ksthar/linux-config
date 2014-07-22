@@ -11,9 +11,7 @@ background no
 format_human_readable
 cpu_avg_samples 2
 default_color 6c6c6c
-default_outline_color 447799
 default_shade_color yellow
-outlinecolor blue
 
 # BORDERS AND OUTLINES
 border_width 1
@@ -35,6 +33,7 @@ uppercase no
 gap_x 10
 gap_y 30
 minimum_size 150 120
+maximum_width 150
 net_avg_samples 2
 no_buffers yes
 out_to_console no
@@ -46,7 +45,7 @@ top_name_width 8
 double_buffer yes
 own_window yes
 own_window_class Conky
-#own_window_type desktop
+own_window_type desktop
 own_window_type override
 own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager

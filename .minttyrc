@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 source $HOME/linux-config/.mintty--solarized-mod
+=======
+source ~har/linux-config/.mintty--solarized-mod
+>>>>>>> c00f6db672da2a301570ce224063149e6b4208d3

@@ -15,7 +15,14 @@ alias td="tmux kill-session -t"
 export TERM="screen-256color"
 
 # for cygwin
+<<<<<<< HEAD
 source $HOME/linux-config/.minttyrc
+=======
+if [ "$(uname -o)" == 'Cygwin' ]; then 
+	source linux-config/.minttyrc
+	alias vi="vim";
+fi
+>>>>>>> c00f6db672da2a301570ce224063149e6b4208d3
 
 # my standard prompt
 PS1="\[\033[32m\]\u@\[\033[36m\]\h:\[\033[34m\]\w\[\033[37m\] "
