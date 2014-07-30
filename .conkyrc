@@ -11,15 +11,20 @@ background no
 format_human_readable
 cpu_avg_samples 2
 default_color 6c6c6c
-default_shade_color yellow
 
 # BORDERS AND OUTLINES
+# draw_shades creates a drop shadow for all the elements.  The
+# default_shade_color is the shadow color.  This makes conky easier to read if
+# the window is transparent on a lighter background.
+draw_shades yes
+default_shade_color black
+
 border_width 1
 draw_outline no
-draw_shades no
 draw_borders no
 stippled_borders 0
 draw_graph_borders yes
+
 show_graph_scale yes
 show_graph_range no
 
@@ -32,7 +37,7 @@ uppercase no
 # DIMENSIONS AND OUTPUT
 gap_x 10
 gap_y 30
-minimum_size 150 120
+minimum_size 150 720
 maximum_width 150
 net_avg_samples 2
 no_buffers yes
@@ -47,6 +52,10 @@ own_window yes
 own_window_class Conky
 own_window_type desktop
 own_window_type override
+# Note, the own_window_colour parameter requires the British spelling of
+# 'colour'. All other instances in this file require the American spelling
+# 'color'.
+own_window_colour 151515
 own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
