@@ -4,7 +4,11 @@
 # My universal bash config
 
 # standard aliases
-alias ls="ls -h --color=auto"
+if [ "$(uname -o)" == "FreeBSD" ]; then
+	alias ls="ls -hG";
+else
+	alias ls="ls -h --color=auto";
+fi
 alias ll="ls -l"
 alias la="ls -a"
 
