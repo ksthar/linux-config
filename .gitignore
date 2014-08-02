@@ -1,2 +1,7 @@
-
+*.swp
+*.swo
+.vim/.netrwhist
+.elinks/cookies
+.elinks/globhist
+.elinks/searchhist
 irclogs
