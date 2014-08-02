@@ -1,0 +1,23 @@
+host = localhost
+port = 6600
+
+auto-center = no
+welcome-screen-list = yes
+wide-cursor = yes
+scroll = yes
+scroll-sep = ' **** '
+
+enable-colors = yes
+
+color background = none
+color title = white
+color title-bold = white,bold
+color line = white
+color line-flags = white
+color list = blue,bold
+color list-bold = cyan,bold
+color progressbar = blue
+color status-state = cyan
+color status-song = cyan
+color status-time = cyan
+color alert = red,bold
