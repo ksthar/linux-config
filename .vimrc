@@ -40,6 +40,10 @@ set bg=dark
 colorscheme jellybeans
 "colorscheme slate
 
+" Doxygen Toolkit
+let g:DoxygenToolkit_authorName="Harlan Shoop"
+" Using defaults for everything else
+
 "set for auto handling of folds
 "au BufWinLeave * mkview
 "au BufWinEnter * silent loadview
