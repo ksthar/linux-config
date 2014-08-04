@@ -14,7 +14,7 @@ echo -ne '\e]4;10;#586e75\a'  # bold green
 echo -ne '\e]4;11;#657b83\a'  # bold yellow
 echo -ne '\e]4;12;#839496\a'  # bold blue
 echo -ne '\e]4;13;#6c71c4\a'  # bold magenta
-echo -ne '\e]4;14;#3a3a3a\a'  # bold cyan
+echo -ne '\e]4;14;#4e4e4e\a'  # bold cyan
 echo -ne '\e]4;15;#fdf6e3\a'  # bold white
 
 echo -ne '\e]10;#eee8d5\a'  # foreground
