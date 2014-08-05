@@ -485,7 +485,7 @@ visualizer_look = "||"
 #
 #active_column_color = "red"
 #
-visualizer_color = "red"
+visualizer_color = "green"
 #
 #window_border_color = "green"
 #
