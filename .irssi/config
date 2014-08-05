@@ -1,3 +1,5 @@
+# Har's irssi config
+
 servers = (
   { address = "irc.stealth.net"; chatnet = "IRCnet"; port = "6668"; },
   { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
@@ -212,34 +214,39 @@ statusbar = {
       };
     };
     add = { };
-    awl_0 = {
-      items = {
-        barstart = { priority = "100"; };
-        awl_0 = { };
-        barend = { priority = "100"; alignment = "right"; };
-      };
-    };
+    remove = { };
   };
 };
 
 settings = {
   core = {
-    real_name = "User Har";
+    real_name = "Harlan";
     user_name = "har";
     nick = "jhar";
-    timestamp_format = "%H:%M";
+    timestamp_format = "%H:%M:%S";
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = {
-    theme = "hars";
+    theme = "hars16";
     bell_beeps = "yes";
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
     autolog = "yes";
   };
   "perl/core/scripts" = {
     nicklist_width = "27";
-    nicklist_height = "97";
+    nicklist_height = "47";
     nicklist_automode = "FIFO";
+    #awl_display_key = "$Q%K|$N%n $H$C$S";
+    #awl_display_key_active = "$Q%K|$N%n $H%U$C%n$S";
+    #awl_display_nokey = "[$N]$H$C$S";
+    #awl_block = "1";
+    #awl_columns = "0";
+    #awl_automode = "sbar";
+    #awl_height_adjust = "1";
+    awl_display_key = "$Q%K|$N%n $H$C$S";
+    awl_display_key_active = "$Q%K|$N%n $H>>$C<<$S";
+    awl_display_nokey = "[$N]$H$C$S";
+    awl_automode = "fifo";
   };
 };
 
@@ -331,6 +338,10 @@ ignores = (
   {
     level = "CRAP MSGS NOTICES SNOTES CTCPS JOINS PARTS QUITS KICKS MODES TOPICS WALLOPS INVITES NICKS DCC DCCMSGS CLIENTNOTICES CLIENTCRAP CLIENTERRORS HILIGHTS";
     channels = ( "#arkOS" );
+  },
+  {
+    level = "CRAP MSGS NOTICES SNOTES CTCPS JOINS PARTS QUITS KICKS MODES TOPICS WALLOPS INVITES NICKS DCC DCCMSGS CLIENTNOTICES CLIENTCRAP CLIENTERRORS HILIGHTS";
+    channels = ( "#twirssi" );
   }
 );
 hilights = (

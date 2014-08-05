@@ -1,3 +1,5 @@
+# Har's irssi config
+
 servers = (
   { address = "irc.stealth.net"; chatnet = "IRCnet"; port = "6668"; },
   { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
@@ -123,7 +125,7 @@ statusbar = {
 
     # treated specially .. window is printed with non-empty windows,
     # window_empty is printed with empty windows
-    window = "{sb $winref:$tag/$itemname{sbmode $M}}";
+    window = "{sb [$winref]:$tag/$itemname{sbmode $M}}";
     window_empty = "{sb $winref{sbservertag $tag}}";
     prompt = "{prompt $[.15]itemname}";
     prompt_empty = "{prompt $winname}";
@@ -219,24 +221,59 @@ statusbar = {
         barend = { priority = "100"; alignment = "right"; };
       };
     };
+    awl_1 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_1 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_2 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_2 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_3 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_3 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
   };
 };
 
 settings = {
   core = {
-    real_name = "User Har";
+    real_name = "Harlan";
     user_name = "har";
     nick = "jhar";
-    timestamp_format = "%H:%M";
+    timestamp_format = "%H:%M:%S";
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = {
-    theme = "hars";
+    theme = "hars256";
     bell_beeps = "yes";
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
     autolog = "yes";
   };
-  "perl/core/scripts" = { nicklist_width = "15"; };
+  "perl/core/scripts" = {
+    nicklist_width = "27";
+    nicklist_height = "74";
+    nicklist_automode = "FIFO";
+    awl_block = "-100";
+    awl_sbar_maxlength = "yes";
+    awl_columns = "0";
+    awl_height_adjust = "2";
+    awl_display_key = "$Q-$H$C$S";
+    awl_maxlines = "0";
+    awl_display_key_active = "$Q-$H$C$S";
+    awl_display_nokey_active = "$S[$N]$H$C$S";
+    awl_display_nokey = "$N-$H$C$S";
+    awl_all_disable = "no";
+  };
 };
 
 ignores = (
@@ -319,17 +356,27 @@ ignores = (
   {
     level = "CRAP MSGS NOTICES SNOTES CTCPS JOINS PARTS QUITS KICKS MODES TOPICS WALLOPS INVITES NICKS DCC DCCMSGS CLIENTNOTICES CLIENTCRAP CLIENTERRORS HILIGHTS";
     channels = ( "#bitlbee" );
+  },
+  {
+    level = "CRAP MSGS NOTICES SNOTES CTCPS JOINS PARTS QUITS KICKS MODES TOPICS WALLOPS INVITES NICKS DCC DCCMSGS CLIENTNOTICES CLIENTCRAP CLIENTERRORS HILIGHTS";
+    channels = ( "#SiriProxy" );
+  },
+  {
+    level = "CRAP MSGS NOTICES SNOTES CTCPS JOINS PARTS QUITS KICKS MODES TOPICS WALLOPS INVITES NICKS DCC DCCMSGS CLIENTNOTICES CLIENTCRAP CLIENTERRORS HILIGHTS";
+    channels = ( "#arkOS" );
+  },
+  {
+    level = "CRAP MSGS NOTICES SNOTES CTCPS JOINS PARTS QUITS KICKS MODES TOPICS WALLOPS INVITES NICKS DCC DCCMSGS CLIENTNOTICES CLIENTCRAP CLIENTERRORS HILIGHTS";
+    channels = ( "#twirssi" );
   }
 );
 hilights = (
-  { text = "harlan"; nick = "yes"; word = "yes"; },
-  { text = "macisv"; nick = "yes"; word = "yes"; },
-  { text = "jhar"; color = "%G"; nick = "no"; word = "no"; },
-  { text = "har-*"; color = "%G"; nick = "no"; word = "no"; },
-  { text = "har-aim -color %G"; nick = "yes"; word = "yes"; },
-  { text = "dwight-yim"; nick = "no"; word = "no"; },
-  { text = "dwight-gtalk"; nick = "no"; word = "no"; },
-  { text = "gw-gtalk"; nick = "no"; word = "no"; }
+  { text = "macisv"; color = "%B"; nick = "no"; word = "yes"; },
+  { text = "harsite"; color = "%B"; nick = "no"; word = "yes"; },
+  { text = "sGgrc"; color = "%B"; nick = "no"; word = "yes"; },
+  { text = "GibsonResearch"; color = "%B"; nick = "no"; word = "yes"; },
+  { text = "kstechnologies"; color = "%B"; nick = "no"; word = "yes"; },
+  { text = "SGvlc"; color = "%B"; nick = "no"; word = "yes"; }
 );
 logs = {
   "~/.irssi/logs/prem.log" = {
@@ -338,7 +385,12 @@ logs = {
   };
 };
 windows = {
-  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  1 = { 
+    immortal = "yes";
+    name = "(status)";
+    level = "ALL";
+    sticky = "yes";
+  };
   2 = {
     items = (
       {
@@ -348,20 +400,25 @@ windows = {
         tag = "localhost";
       }
     );
+    sticky = "yes";
   };
-  3 = {
+  3 = { name = "hilight"; sticky = "yes"; };
+  4 = {
     items = (
       {
-        type = "QUERY";
+        type = "CHANNEL";
         chat_type = "IRC";
-        name = "gw-gtalk";
+        name = "#twitter_harsite";
         tag = "localhost";
       }
     );
+    sticky = "yes";
+    parent = "1";
   };
-  4 = { name = "hilight"; sticky = "yes"; };
+  5 = { sticky = "yes"; parent = "2"; };
 };
 mainwindows = {
-  1 = { first_line = "10"; lines = "34"; };
-  4 = { first_line = "1"; lines = "9"; };
+  1 = { first_line = "57"; lines = "37"; };
+  3 = { first_line = "1"; lines = "18"; };
+  2 = { first_line = "19"; lines = "38"; };
 };

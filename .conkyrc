@@ -94,8 +94,7 @@ ${color white} ${top name 4} ${tab 20}${color 437019} ${top pid 4} ${color yello
 # 
 # ========================= MEMORY =================================
 ${voffset 20}${font DroidSans:bold:italic:size=9}${color green}MEMORY${offset 6}${voffset -2}${hr 2}${font} 
-${voffset 6}${color 6c6c6c}RAM Usage: ${color white}$memperc% ${color 437019} 
-#${color white} $mem/$memmax - $memperc% ${color 437019} 
+${voffset 6}${color 6c6c6c}RAM Usage: ${color white}$memperc% / $memmax ${color 437019} 
 ${membar 6}
 ${voffset 6}${color 6c6c6c}Swap Usage: ${color white}$swapperc% ${color 437019} 
 #${color white} $swap/$swapmax - $swapperc% ${color 437019} 
