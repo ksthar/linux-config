@@ -215,6 +215,20 @@ statusbar = {
     };
     add = { };
     remove = { };
+    awl_0 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_1 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_1 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
   };
 };
 
@@ -246,7 +260,8 @@ settings = {
     awl_display_key = "$Q%K|$N%n $H$C$S";
     awl_display_key_active = "$Q%K|$N%n $H>>$C<<$S";
     awl_display_nokey = "[$N]$H$C$S";
-    awl_automode = "fifo";
+    awl_automode = "sbar";
+    awl_block = "-20";
   };
 };
 
