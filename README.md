@@ -1,7 +1,8 @@
 linux-config
 ============
 
-Common config files for my bash-based Linux/BSD systems.
+Common config files for my bash-based Linux/BSD systems.  Clone into home
+directory and symlink to the desired files and directories.
 
 Installation
 ------------
@@ -30,13 +31,13 @@ Linux vs. FreeBSD
 I use both Linux systems and FBSD systems.  For now, I'm using 'uname -o' to
 adapt my .bashrc file.  I have not handled the difference in bash locations
 (/bin/bash (linux) vs. /usr/local/bin/bash (FreeBSD)), so some scripts will not
-run (the right.sh script for tmux, for example).  Also, the output of some
-common tools (e.g. ifconfig) is different causing strangeness when scripts
-expect a certain format.
+run without modification (the right.sh script for tmux, for example).  Also,
+the output of some common tools (e.g. ifconfig) is different causing
+strangeness when scripts expect a certain format.
 
 Cygwin
 ------
-I have added support for Cygwin.  The .bashrc file checks for a cywin install
+I have added support for Cygwin.  The .bashrc file checks for a cygwin install
 (uname -o) to customize.  Cygwin also has a custom dircolors setup (linked
 through .minttyrc) that should be run on new installs.
 
@@ -49,7 +50,7 @@ ncmpc for now.
 Irssi
 -----
 Irssi is my Grand Central station for non-email communications.  I run
-everything through it. 
+everything through it. Necessary scripts are in .irssi/scripts.
 
 ### Bitlbee for Chat
 Bitlbee should be installed.  I have not included my .bitlbee/ directory and
