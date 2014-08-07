@@ -51,7 +51,7 @@ Irssi
 Irssi is my Grand Central station for non-email communications.  I run
 everything through it. 
 
-## Bitlbee
+### Bitlbee
 Bitlbee should be installed.  I have not included my .bitlbee/ directory and
 .bitlbee.conf file.  Scrubbed versions are required.  Note that when you launch
 bitlbee, include the full paths: 
