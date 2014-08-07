@@ -69,7 +69,7 @@ adv\_windowlist.pl and twirssi.pl scripts behaved differently when run in a
 patched version of irssi.  Consequently, I've dropped back to plain 'ol 16
 colors.  Default theme is hars16.theme.  It actually works ok with the cygwin
 dircolors or by using Tango colors in gnome-terminal with cyan modified to
-#4e4e4e (dark #3a3a3a).
+\#4e4e4e (dark \#3a3a3a).
 
 ### Twitter Solution
 Twirssi has worked better than bitlbee's twitter support and has more features.
