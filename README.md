@@ -6,10 +6,10 @@ Common config files for my bash-based Linux/BSD systems.
 Installation
 ------------
 The idea is that I can clone this repo on a new system, create symlinks in my
-home directory, and have a familiar setup very quickly.  One limitation is that
-this is not a protected repo so I have to be careful about the contents of the
-files I share.  For now, bitlbee and mutt files are not included for that
-reason.
+home directory, and have a familiar setup very quickly.  This can be automated
+on vagrant or docker systems.  One limitation is that this is not a protected
+repo so I have to be careful about the contents of the files I share.  For now,
+bitlbee and mutt files are not included for that reason.
 
 Simlink to home dir:
 - .bashrc
@@ -51,7 +51,7 @@ Irssi
 Irssi is my Grand Central station for non-email communications.  I run
 everything through it. 
 
-### Bitlbee
+### Bitlbee for Chat
 Bitlbee should be installed.  I have not included my .bitlbee/ directory and
 .bitlbee.conf file.  Scrubbed versions are required.  Note that when you launch
 bitlbee, include the full paths: 
@@ -63,14 +63,15 @@ out the [bitlbee docs](http://wiki.bitlbee.org/HowtoHipchat).
 
 ### 256 Color Support
 Awhile back, I found a [256 color patch]
-(https://aur.archlinux.org/packages/irssi-256color/) for Arch.  I really like
-the flexibility of 256 color irssi, but I have had issues with the patch.  The
-adv\_windowlist.pl and twirssi.pl scripts had issues with a 256color irssi.
-Consequently, I've dropped back to plain 'ol 16 colors.  Default theme is
-hars16.theme.  It actually works ok with the cygwin dircolors or by using Tango
-colors in gnome-terminal with cyan modified to #4e4e4e (dark #3a3a3a).
+(https://aur.archlinux.org/packages/irssi-256color/) for irssi on Arch.  I really like
+the flexibility of 256 colors, but I have had issues with the patch.  The
+adv\_windowlist.pl and twirssi.pl scripts behaved differently when run in a
+patched version of irssi.  Consequently, I've dropped back to plain 'ol 16
+colors.  Default theme is hars16.theme.  It actually works ok with the cygwin
+dircolors or by using Tango colors in gnome-terminal with cyan modified to
+#4e4e4e (dark #3a3a3a).
 
-### Twitter
+### Twitter Solution
 Twirssi has worked better than bitlbee's twitter support and has more features.
 
 Tmux
