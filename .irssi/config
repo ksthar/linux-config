@@ -229,6 +229,7 @@ statusbar = {
         barend = { priority = "100"; alignment = "right"; };
       };
     };
+<<<<<<< HEAD
     awl_2 = {
       items = {
         barstart = { priority = "100"; };
@@ -236,6 +237,8 @@ statusbar = {
         barend = { priority = "100"; alignment = "right"; };
       };
     };
+=======
+>>>>>>> a9f51e408853a38e39256589635b299c34cd80a8
   };
 };
 
