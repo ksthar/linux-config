@@ -99,18 +99,18 @@ abstracts = {
   # Status bar
   sb_background = "%6";
   sb_topic_bg = "%6%w";
-  sb_info_bg = "%4%m";
+  sb_info_bg = "%4%g";
   sbstart = "";
   sbend = "";
   prompt = "$*%w: ";
   sb = "%w $*";
-  sbmode = "%m(%W+%m$*%m)%m";
+  sbmode = "%g(%W+%g$*%g)%g";
   sbaway = "%w %R %r^_^ %b$0";
   sbservertag = ":$0";
   sb_act_none = "%n$*";
   sb_act_sep = "%n$*";
-  sb_act_text = "%r$*";
-  sb_act_msg = "%m$*";
+  sb_act_text = "%g$*";
+  sb_act_msg = "%g$*";
   sb_act_hilight = "%r$*";
   sb_act_hilight_color = "$0$1-%n";
 };
