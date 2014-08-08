@@ -38,7 +38,7 @@ abstracts = {
   # Message
   msgnick = "$1%w$0 %w %|";
   ownmsgnick = "{msgnick $0 $1-}%w";
-  ownnick = "%m$*%w";
+  ownnick = "%g$*%w";
   pubmsgnick = "{msgnick $0 $1-}%w";
   pubnick = "%b$*%w";
   pubmsgmenick = "{msgnick $0 $1-}%m";
@@ -78,12 +78,12 @@ abstracts = {
 
   # Names
   names_prefix = "";
-  names_nick = "^%m$0%z00afff$1- ";
+  names_nick = "^%m$0%g$1- ";
   names_nick_op = "{names_nick $*}";
   names_nick_halfop = "{names_nick $*}";
   names_nick_voice = "{names_nick $*}";
   names_users = "-%w$*%n-";
-  names_channel = "%w$*%n";
+  names_channel = "%g$*%n";
 
   # DCC
   dcc = "%c$*%n";
@@ -130,31 +130,31 @@ formats = {
     idea_msg_private_query = "{privmsgnick $[-15]0}%g$2";
   };
   "fe-common/core" = {
-    join = "{channick_hilight $[-15]0} %w-->%n {chanhost_hilight $1} joins {channel $2}";
+    join = "{channick_hilight $[-15]0} %g-->%n {chanhost_hilight $1} joins {channel $2}";
     part = "{channick $[-15]0} %n<--%n {chanhost $1} leaves {channel $2} {reason $3}";
-    quit = "{channick $[-15]0} %c<--%n {chanhost $1} quits {reason $[.50]2}";
+    quit = "{channick $[-15]0} %r<--%n {chanhost $1} quits {reason $[.50]2}";
     kick = "{channick $[-15]0} %r:(%n was kicked from {channel $1} by {nick $2} {reason $3}";
     nick_changed = "{channick $[-15]0} %w<>%m changes nick to {channick_hilight $1}";
-    own_msg = "{ownmsgnick {ownnick $[-10]0$2}}$1";
-    own_msg_channel = "{ownmsgnick {ownnick $[-10]0$3}{msgchannel $1}}$2";
-    pubmsg_me = "{pubmsgmenick {menick $[-14]0}$2}$1";
-    pubmsg_me_channel = "{pubmsgmenick {menick $[-14]0$3}{msgchannel $1}}$2";
-    pubmsg_hilight = "{pubmsghinick $0 $0 $[-14]1$3%n}$2";
-    pubmsg_hilight_channel = "{pubmsghinick $0 $0 $[-14]1$4{msgchannel $2}}$3";
-    pubmsg = "{pubmsgnick {pubnick $nickcolor$[-14]0$2}}$1";
-    pubmsg_channel = "{pubmsgnick {pubnick $nickcolor$[-14]0$3}{msgchannel $1}}$2";
+    own_msg = "{ownmsgnick {ownnick $[-15]0$2}}$1";
+    own_msg_channel = "{ownmsgnick {ownnick $[-15]0$3}{msgchannel $1}}$2";
+    pubmsg_me = "{pubmsgmenick {menick $[-15]0}$2}$1";
+    pubmsg_me_channel = "{pubmsgmenick {menick $[-15]0$3}{msgchannel $1}}$2";
+    pubmsg_hilight = "{pubmsghinick $0 $0 $[-15]1$3%n}$2";
+    pubmsg_hilight_channel = "{pubmsghinick $0 $0 $[-15]1$4{msgchannel $2}}$3";
+    pubmsg = "{pubmsgnick {pubnick $nickcolor$[-15]0$2}}$1";
+    pubmsg_channel = "{pubmsgnick {pubnick $nickcolor$[-15]0$3}{msgchannel $1}}$2";
     own_msg_private = "{ownprivmsg msg $0}$1";
-    own_msg_private_query = "{ownprivmsgnick {ownprivnick $[-10]2}}$1";
-    msg_private_query = "{privmsgnick $[-6]0}$2";
+    own_msg_private_query = "{ownprivmsgnick {ownprivnick $[-15]2}}$1";
+    msg_private_query = "{privmsgnick $[-15]0}$2";
     msg_private = "{privmsg $0 $1}$2";
   };
   "fe-common/irc" = {
     chanmode_change = "{hilight %n~~~ %m{nick $2}} %n sets%m{mode $1} %w on {channelhilight $0 %n~~~}";
-    own_action = "{ownaction $[-10]0}$1";
+    own_action = "{ownaction $[-15]0}$1";
     action_private = "{pvtaction $0}$2";
-    action_private_query = "{pvtaction_query $[-9]0}$2";
-    action_public_channel = "{pubaction $[-10]0{msgchannel $1}}$2";
-    action_public = "{pubaction $[-10]0}$1";
+    action_private_query = "{pvtaction_query $[-15]0}$2";
+    action_public_channel = "{pubaction $[-15]0{msgchannel $1}}$2";
+    action_public = "{pubaction $[-15]0}$1";
     netsplit = "{netsplit    Netsplit} %r<···%n {server $0} %W<%n-%W>%n {server $1} quits: $2";
     netsplit_more = "{netsplit    Netsplit} %w<··%n {server $0} %W<%n-%W>%n {server $1} quits: $2 (%K+$3 more%n)";
     netsplit_join = "{netjoin    Netsplit} %c··>%n $0";
@@ -162,8 +162,8 @@ formats = {
     server_chanmode_change = "{netsplit   {nick $2}}/{channelhilight $0} sets {mode $1} ";
   };
   "fe-common/irc/dcc" = {
-    own_dcc_action_query = "{dccownaction $[-9]0}$2";
-    dcc_msg_query = "{privmsgnick $[-9]0}$1";
-    own_dcc_query = "{ownmsgnick {ownnick $[-9]0}} $2";
+    own_dcc_action_query = "{dccownaction $[-15]0}$2";
+    dcc_msg_query = "{privmsgnick $[-15]0}$1";
+    own_dcc_query = "{ownmsgnick {ownnick $[-15]0}} $2";
   };
 };

@@ -229,6 +229,16 @@ statusbar = {
         barend = { priority = "100"; alignment = "right"; };
       };
     };
+<<<<<<< HEAD
+    awl_2 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_2 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+=======
+>>>>>>> a9f51e408853a38e39256589635b299c34cd80a8
   };
 };
 
@@ -248,7 +258,7 @@ settings = {
   };
   "perl/core/scripts" = {
     nicklist_width = "27";
-    nicklist_height = "47";
+    nicklist_height = "74";
     nicklist_automode = "FIFO";
     #awl_display_key = "$Q%K|$N%n $H$C$S";
     #awl_display_key_active = "$Q%K|$N%n $H%U$C%n$S";
@@ -257,11 +267,14 @@ settings = {
     #awl_columns = "0";
     #awl_automode = "sbar";
     #awl_height_adjust = "1";
-    awl_display_key = "$Q%K|$N%n $H$C$S";
-    awl_display_key_active = "$Q%K|$N%n $H>>$C<<$S";
+    awl_display_key = "$Q%K|$N%n $H$C%n$S";
+    awl_display_key_active = "$Q%K|$N%n $H%b>>$C<<%n$S";
     awl_display_nokey = "[$N]$H$C$S";
     awl_automode = "sbar";
     awl_block = "-20";
+    short_url_provider = "TinyURL";
+    awl_height_adjust = "1";
+    awl_columns = "0";
   };
 };
 
