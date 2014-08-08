@@ -12,8 +12,8 @@ set nocompatible
 syntax on
 set number
 set ruler
-set ts=2
-set sw=2
+set ts=4
+set sw=4
 set numberwidth=6
 set foldcolumn=3
 set modeline
@@ -42,6 +42,9 @@ colorscheme jellybeans
 
 " Doxygen Toolkit
 let g:DoxygenToolkit_authorName="Harlan Shoop"
+let g:DoxygenToolkit_blockHeader="****************************************************************** " 
+let g:DoxygenToolkit_blockFooter="****************************************************************** "
+
 " Using defaults for everything else
 
 "set for auto handling of folds
