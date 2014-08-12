@@ -12,6 +12,10 @@ set nocompatible
 filetype on
 filetype plugin on
 filetype indent on
+
+" Pathogen
+execute pathogen#infect()
+
 set omnifunc=syntaxcomplete#Complete
 set wildmenu
 set wildmode=list:longest,full
@@ -56,3 +60,11 @@ let g:DoxygenToolkit_authorName="Harlan Shoop"
 
 " When I print to laser, I want B&W
 set printoptions+=syntax:n
+
+" Plugins to autorun
+" Autorun NERDTree
+autocmd vimenter * NERDTree
+
+" Run NERDTree even if a file was not specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
