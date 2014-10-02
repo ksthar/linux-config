@@ -17,14 +17,18 @@ Simlink to home dir:
 - .conkyrc
 - .elinks/
 - .irssi/
+- .minttyrc
+- .mintty--solarized-mod
 - .ncmpc/
 - .ncmpcpp/
 - .pentadactylrc
 - .pentadactyl/
-- .tmux.conf
 - .tmux/
+- .tmux.conf
 - .vimrc
 - .vim/
+- jellybeans.vim
+- README.md
 
 Linux vs. FreeBSD
 -----------------
@@ -40,12 +44,6 @@ Cygwin
 I have added support for Cygwin.  The .bashrc file checks for a cygwin install
 (uname -o) to customize.  Cygwin also has a custom dircolors setup (linked
 through .minttyrc) that should be run on new installs.
-
-ncmpcpp
--------
-This is handy to keep in a tmux session.  I use it in conjunction with MPD, and
-have not included those configs.  I prefer this to ncmpc, but have included
-ncmpc for now.
 
 Irssi
 -----
@@ -75,6 +73,12 @@ dircolors or by using Tango colors in gnome-terminal with cyan modified to
 ### Twitter Solution
 Twirssi has worked better than bitlbee's twitter support and has more features.
 
+ncmpcpp
+-------
+This is handy to keep in a tmux session.  I use it in conjunction with MPD, and
+have not included those configs.  I prefer this to ncmpc, but have included
+ncmpc for now.
+
 Tmux
 ----
 This setup expects a v1.8 or better.  Ubuntu 12.04 runs ~v1.6 and will choke on
@@ -95,7 +99,7 @@ colorschemes.  Currently, .vimrc sets this colorscheme as the default.
 TO-DO
 -----
 - Create an install script that creates the symlinks in the new system.
-- Adapt shell scripts to different bash locations
+- Adapt shell scripts to different bash locations (/bin/bash vs. /usr/local/bin/bash)
 - Adapt scripts to different utility outputs
 - ?Scrub bitlbee conf and dir
 - ?Add mutt: scrub files 

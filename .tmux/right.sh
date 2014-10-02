@@ -9,10 +9,10 @@ MYEXTIP=$(curl http://whatismyip.akamai.com/)
 #fi
 if [ "$(uname -o)" == "Cygwin" ]; then
 	MYINTIP=$(ipconfig | awk '/IPv4\ / { print $14 }' | head -1)
-	MYDATE=$(date | cut -c 1-3)' '$(date | cut -c 19-23);
+	MYDATE=$(date +"%D")' '$(date | cut -c 1-3)' '$(date | cut -c 19-23);
 else
 	MYINTIP=$(ifconfig eth0 | awk '/inet\ / { print $2 }' | awk '{ split( $0,a,":"); print a[2]}' | tail -1)
-	MYDATE=$(date | cut -c 1-3)' '$(date | cut -c 12-16);
+	MYDATE=$(date +"%D")' '$(date | cut -c 1-3)' '$(date | cut -c 12-16);
 fi	
 #echo '#[fg=white]Battery: #[fg=yellow]#[bg=black] '$BATTLEFT\
 echo ' #[fg=white]#[bg=colour237] Hostname: #[fg=yellow]#[bg=black] '$MYHOST\
