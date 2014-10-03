@@ -9,11 +9,21 @@
 "
 " General 
 set nocompatible
+filetype on
+filetype plugin on
+filetype indent on
+
+" Pathogen
+"execute pathogen#infect()
+
+set omnifunc=syntaxcomplete#Complete
+set wildmenu
+set wildmode=list:longest,full
 syntax on
 set number
 set ruler
-set ts=2
-set sw=2
+set ts=4
+set sw=4
 set numberwidth=6
 set foldcolumn=3
 set modeline
@@ -31,7 +41,7 @@ set fo=tcqnj
 set guioptions=
 "Windows...
 "set guifont=consolas:h10
-"Linux...
+"Ubuntu...
 set guifont=Ubuntu\ Mono\ 10
 
 " Colors
@@ -40,10 +50,24 @@ set bg=dark
 colorscheme jellybeans
 "colorscheme slate
 
+" Doxygen Toolkit
+let g:DoxygenToolkit_authorName="Harlan Shoop"
+let g:DoxygenToolkit_blockHeader="****************************************************************** " 
+let g:DoxygenToolkit_blockFooter="****************************************************************** "
+
+" Using defaults for everything else
+
 "set for auto handling of folds
 "au BufWinLeave * mkview
 "au BufWinEnter * silent loadview
-filetype plugin indent on
 
 " When I print to laser, I want B&W
 set printoptions+=syntax:n
+
+" Plugins to autorun
+" Autorun NERDTree
+"autocmd vimenter * NERDTree
+
+" Run NERDTree even if a file was not specified
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif

@@ -4,9 +4,13 @@
 # My universal bash config
 
 # standard aliases
-alias ls="ls -h --color=auto"
+if [ "$(uname -o)" == "FreeBSD" ]; then
+	alias ls="ls -hG";
+else
+	alias ls="ls -h --color=auto";
+fi
 alias ll="ls -l"
-alias la="ls -a"
+alias la="ls -la"
 
 # the '-2' is needed in some termnials to show 256 colors
 alias tmux="tmux -2"
