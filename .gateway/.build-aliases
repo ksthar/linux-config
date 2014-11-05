@@ -1,0 +1,4 @@
+alias src="cd /neptune/AllegionGateway/runtime/src"
+alias build="cd /neptune/build"
+alias recipes="cd /neptune/AllegionGateway/runtime/yocto/meta-neptune/recipes-neptune"
+
