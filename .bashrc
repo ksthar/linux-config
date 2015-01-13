@@ -3,10 +3,18 @@
 #
 # My universal bash config
 
-# standard aliases
-if [ "$(uname -o)" == "FreeBSD" ]; then
+# standard aliases, note that as of Mac 10.9, the '-o' parameter of uname is
+# not recognized, so we have to use '-s'
+if [ "$(uname -s)" == "Darwin" ]; then
+	alias ls="ls -hG";
+elif [ "$(uname -s)" == "FreeBSD" ]; then
 	alias ls="ls -hG";
 else
+	# for cygwin
+	if [ "$(uname -o)" == 'Cygwin' ]; then 
+		source linux-config/.minttyrc
+		alias vi="vim";
+	fi
 	alias ls="ls -h --color=auto";
 fi
 alias ll="ls -l"
@@ -22,12 +30,6 @@ alias tk="tmux kill-session -t"
 
 # tmux needs this for 256 colors
 export TERM="screen-256color"
-
-# for cygwin
-if [ "$(uname -o)" == 'Cygwin' ]; then 
-	source linux-config/.minttyrc
-	alias vi="vim";
-fi
 
 if [ "$(whoami)" == 'root' ]; then 
 	PS1="\[\033[31m\]\u@\[\033[36m\]\h:\[\033[34m\]\w\[\033[37m\] ";
