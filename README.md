@@ -30,13 +30,13 @@ NOTES
 Installation
 ------------
 _Directions:_
-> $ cd $HOME
-> $ git clone https://github.com/ksthar/linux-config.git
+    $ cd $HOME
+    $ git clone https://github.com/ksthar/linux-config.git
 Then, simlink the files/directories you want. 
 
 _For Example:_
-> $ ln -s linux-config/.bashrc .
-> $ source .bashrc
+    $ ln -s linux-config/.bashrc .
+    $ source .bashrc
 
 
 _Available to Simlink:_
@@ -97,7 +97,7 @@ Bitlbee should be installed.  I have not included my .bitlbee/ directory and
 .bitlbee.conf file.  Scrubbed versions are required.  Note that when you launch
 bitlbee, include the full paths: 
 
-> $ bitlbee -c /full/path/.bitlbee.conf -d /full/path/.bitlbee 
+    $ bitlbee -c /full/path/.bitlbee.conf -d /full/path/.bitlbee 
 
 Bitlbee is great for all XMPP-based chat services.  For HipChat support, check
 out the [bitlbee docs](http://wiki.bitlbee.org/HowtoHipchat).
