@@ -30,11 +30,13 @@ NOTES
 Installation
 ------------
 _Directions:_
+
     $ cd $HOME
     $ git clone https://github.com/ksthar/linux-config.git
 Then, simlink the files/directories you want. 
 
 _For Example:_
+
     $ ln -s linux-config/.bashrc .
     $ source .bashrc
 
