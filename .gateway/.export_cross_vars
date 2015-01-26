@@ -1,0 +1,5 @@
+
+export CC=/neptune/build/tmp/sysroots/x86_64-linux/usr/bin/armv5te-dey-linux-gnueabi/arm-dey-linux-gnueabi-gcc
+export LD=/neptune/build/tmp/sysroots/x86_64-linux/usr/bin/armv5te-dey-linux-gnueabi/arm-dey-linux-gnueabi-ld
+export CFLAGS=" -g -O0 -march=armv5te --sysroot=/neptune/build/tmp/sysroots/ccardimx28js"
+export CXXFLAGS=" -g -O0 -march=armv5te --sysroot=/neptune/build/tmp/sysroots/ccardimx28js"

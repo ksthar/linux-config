@@ -1,8 +1,10 @@
 *.swp
 *.swo
 .vim/.netrwhist
+.elinks/bookmarks
 .elinks/cookies
 .elinks/globhist
+.elinks/gotohist
 .elinks/searchhist
 .irssi/awaylog
 .irssi/away.log
