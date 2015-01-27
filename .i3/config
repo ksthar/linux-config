@@ -22,7 +22,9 @@ set $mod Mod4
 font pango:Ubuntu Mono 10
 
 # Window decor
-new_window 1pixel
+#new_window 1pixel
+new_window normal
+new_float normal
 #hide_edge_borders vertical
 
 # Colors
@@ -51,8 +53,8 @@ bindsym $mod+Mod1+l exec ~/.i3/i3lock_custom
 # change focus
 bindsym $mod+j focus up
 bindsym $mod+k focus down
-bindsym $mod+l focus left
-bindsym $mod+h focus right
+bindsym $mod+l focus right
+bindsym $mod+h focus left 
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -61,10 +63,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
+bindsym $mod+Shift+j move up
 bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -73,7 +75,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+Shift+h split h
+bindsym $mod+Shift+z split h
 
 # split in vertical orientation
 bindsym $mod+Shift+v split v
@@ -102,7 +104,7 @@ bindsym $mod+a focus parent
 set $ws1 "1: local"
 set $ws2 "2: ssh"
 set $ws3 "3: comms"
-set $ws4 "4: work"
+set $ws4 "4: browsing"
 set $ws5 "5: work"
 set $ws6 "6: work"
 
@@ -132,8 +134,10 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -145,10 +149,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
