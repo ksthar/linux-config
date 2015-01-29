@@ -206,19 +206,19 @@ visualizer_look = "||"
 ## text attributes listed above.
 ##
 #
-#now_playing_prefix = "$b"
+now_playing_prefix = "$b"
 #
-#now_playing_suffix = "$/b"
+now_playing_suffix = "$/b"
 #
-#browser_playlist_prefix = "$2playlist$9 "
+browser_playlist_prefix = "$2playlist$9 "
 #
-#selected_item_prefix = "$6"
+selected_item_prefix = "$6"
 #
-#selected_item_suffix = "$9"
+selected_item_suffix = "$9"
 #
 ## colors are not supported for below variable
 #
-#song_window_title_format = "{%a - }{%t}|{%f}"
+song_window_title_format = "{%a - }{%t}|{%f}"
 #
 ##### columns settings #####
 ##
@@ -256,7 +256,7 @@ visualizer_look = "||"
 ##   not available.
 ##
 #
-#song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[]{t|f} (30)[red]{b}"
+song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[]{t|f} (30)[red]{b}"
 #
 ##### various settings #####
 #
@@ -386,22 +386,22 @@ visualizer_look = "||"
 ## Note: You can define startup screen for ncmpcpp
 ## by choosing screen number from the list above.
 ##
-#startup_screen = "2"
-#
-#jump_to_now_playing_song_at_start = "yes"
-#
-#ask_before_clearing_main_playlist = "no"
-#
-#clock_display_seconds = "no"
-#
-#display_volume_level = "yes"
-#
-#display_bitrate = "no"
-#
-#display_remaining_time = "no"
-#
-#regular_expressions = "basic" (basic/extended)
-#
+startup_screen = "6"
+
+jump_to_now_playing_song_at_start = "yes"
+
+ask_before_clearing_main_playlist = "no"
+
+clock_display_seconds = "no"
+
+display_volume_level = "yes"
+
+display_bitrate = "no"
+
+display_remaining_time = "no"
+
+regular_expressions = "basic" (basic/extended)
+
 ##
 ## Note: If below is enabled, ncmpcpp will ignore leading
 ## "The" word while sorting items in browser, tags in
@@ -455,39 +455,39 @@ visualizer_look = "||"
 #
 #use_console_editor = "no" (set to yes, if your editor is console app)
 #
-##### colors definitions #####
-#
-#colors_enabled = "yes"
-#
-#empty_tag_color = "cyan"
-#
-#header_window_color = "default"
-#
-#volume_color = "default"
-#
-#state_line_color = "default"
-#
-#state_flags_color = "default"
-#
-#main_window_color = "yellow"
-#
-#color1 = "white"
-#
-#color2 = "green"
-#
-#main_window_highlight_color = "yellow"
-#
-#progressbar_color = "default"
-#
-#statusbar_color = "default"
-#
-#alternative_ui_separator_color = "black"
-#
-#active_column_color = "red"
-#
+#### colors definitions #####
+
+colors_enabled = "yes"
+
+empty_tag_color = "cyan"
+
+header_window_color = "default"
+
+volume_color = "default"
+
+state_line_color = "default"
+
+state_flags_color = "default"
+
+main_window_color = "cyan"
+
+color1 = "white"
+
+color2 = "green"
+
+main_window_highlight_color = "cyan"
+
+progressbar_color = "default"
+
+statusbar_color = "default"
+
+alternative_ui_separator_color = "black"
+
+active_column_color = "red"
+
 visualizer_color = "green"
-#
-#window_border_color = "green"
-#
-#active_window_border = "red"
-#
+
+window_border_color = "green"
+
+active_window_border = "red"
+
