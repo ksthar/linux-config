@@ -1,6 +1,88 @@
-factorymgr=/neptune/AllegionGateway/runtime/src/factorymgr/src CD=. {
+=====[ GATEWAY SRC ]====
+
+factorymgr=/neptune/AllegionGateway/runtime/src/factorymgr CD=. {
+ docs=./docs CD=.{
+ }
+ src=./src CD=.{ 
+  fac_otp.h
+  factorymgr.h
+  ble2mac.c
+  ble2ver.c
+  blemac.c
+  checkver.c
+  decrypt.c
+  facFDR.c
+  facLed.c
+  facLockMgrCmds.c
+  facOtpCmds.c
+  facP12.c
+  facRSICmds.c
+  facWiFiCmds.c
+  facWriteKey.c
+  fac_otp.c
+  facput.c
+  factorymgr.c
+  getwifimac.c
+  gwmgr_emu.c
+  ubootver.c
+  .gitignore
+  Makefile.am
+  gen_root_pw.sh
+ }
+ autogen.sh
+ autogen_cross.sh
+
+ Makefile.am
+ configure.ac
+
+ .gitignore
 }
-gwmgr=/neptune/AllegionGateway/runtime/src/gwmgr/src CD=. {
+gwmgr=/neptune/AllegionGateway/runtime/src/gwmgr CD=. {
+ docs=./docs CD=. {
+ }
+ src=./src CD=. {
+  state=./state CD=.{
+   states.h
+   any.c
+   fdr.c
+   normal.c
+   post.c
+   timeinit.c
+   uncaptured.c
+  }
+  superman=./superman CD=.{
+   superman_state.c
+  }
+  system=./system CD=. {
+   80211.c
+   gw_time.c
+   thread_fdr.c
+   thread_heartbeat.c
+   thread_hours_inuse.c
+   thread_ui.c
+   util_otp.c
+   util_proc.c
+   util_timers.c
+  }
+  test=./test CD=. {
+   testgw80211.c
+  }
+  debug.h
+  gwsupvsr_common.h
+  cfgdata.c
+  ipc.c
+  main.c
+  ui.c
+
+  Makefile.am
+  .gitignore
+ }
+ autogen.sh
+ autogen_cross.sh
+ Makefile.am
+ configure.ac
+
+ .gitignore
 } 
 iphostmgr=/neptune/AllegionGateway/runtime/src/iphostmgr/src CD=. { 
 }
