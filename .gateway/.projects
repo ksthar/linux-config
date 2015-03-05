@@ -1,0 +1,22 @@
+factorymgr=/neptune/AllegionGateway/runtime/src/factorymgr/src CD=. {
+}
+gwmgr=/neptune/AllegionGateway/runtime/src/gwmgr/src CD=. {
+} 
+iphostmgr=/neptune/AllegionGateway/runtime/src/iphostmgr/src CD=. { 
+}
+lckmgr=/neptune/AllegionGateway/runtime/src/lckmgr/src CD=. { 
+}
+libparson=/neptune/AllegionGateway/runtime/src/libparson CD=. { 
+}
+mappmgr=/neptune/AllegionGateway/runtime/src/mappmgr/src CD=. { 
+}
+msgmgr=/neptune/AllegionGateway/runtime/src/msgmgr/src CD=. { 
+}
+neptuneipc=/neptune/AllegionGateway/runtime/src/neptuneipc CD=. { 
+}
+rsimgr=/neptune/AllegionGateway/runtime/src/rsimgr/src CD=. { 
+}
+template=/neptune/AllegionGateway/runtime/src/template CD=. { 
+}
+updatemgr=/neptune/AllegionGateway/runtime/src/updatemgr/src CD=. { 
+}
