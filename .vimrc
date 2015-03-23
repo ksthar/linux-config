@@ -28,6 +28,8 @@ set numberwidth=6
 set foldcolumn=3
 set modeline
 set modelines=5
+set hlsearch
+set nrformats=
 
 " Special Options 
 " t = auto-wrap text using textwidth
