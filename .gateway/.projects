@@ -57,6 +57,8 @@ gwmgr=/neptune/AllegionGateway/runtime/src/gwmgr CD=. {
    80211.c
    gw_time.c
    thread_fdr.c
+   thread_get_list.c
+   thread_get_time.c
    thread_heartbeat.c
    thread_hours_inuse.c
    thread_ui.c
@@ -95,6 +97,24 @@ mappmgr=/neptune/AllegionGateway/runtime/src/mappmgr/src CD=. {
 msgmgr=/neptune/AllegionGateway/runtime/src/msgmgr/src CD=. { 
 }
 neptuneipc=/neptune/AllegionGateway/runtime/src/neptuneipc CD=. { 
+ docs=docs CD=.{
+  GatewayIPC-DesignDocument.docx
+ }
+ src=src CD=. {
+  allegion=allegion CD=. {
+   neptuneipc.h
+   neptuneipc_list.h
+   neptuneipc_strings.h
+  }
+  neptuneipc_client.c
+  neptuneipc_list.c
+  Makefile.am
+ }
+ autogen.sh
+ autogen_cross.sh
+ .gitignore
+ Makefile.am
+ configure.ac
 }
 rsimgr=/neptune/AllegionGateway/runtime/src/rsimgr/src CD=. { 
 }
