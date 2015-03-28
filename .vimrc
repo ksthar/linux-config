@@ -109,6 +109,11 @@ set printoptions+=syntax:n
 " Run NERDTree even if a file was not specified
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Run Project with file
+autocmd VimEnter * Project ~/linux-config/.gateway/.projects
+
 " --------------------------------------------------------------------------------
 "  									EOF
 " --------------------------------------------------------------------------------
+
