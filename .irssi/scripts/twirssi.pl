@@ -1,1 +1,0 @@
-twirssi/twirssi.pl
