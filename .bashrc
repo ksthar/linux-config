@@ -27,6 +27,7 @@ alias ta="tmux attach-session -t"
 alias tl="tmux list-sessions"
 alias td="tmux detach-client -s"
 alias tk="tmux kill-session -t"
+alias tr="tmux rename-session -t"
 
 # tmux needs this for 256 colors
 export TERM="screen-256color"

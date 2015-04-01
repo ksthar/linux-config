@@ -1,0 +1,221 @@
+# =========================================================================
+# @file 	config
+# @brief 	i3 config file.  Started with the default and adapted.  Colors are
+# 			inspired by the jellybeans scheme and present a muted gray
+# 			palette.
+#
+# 			This config assumes the client machine has i3status and i3lock
+# 			installed. Also, the system uses an Ubuntu font--and alternative
+# 			can be selected if required.
+#
+# @author 	Harlan Shoop
+# @version 	0.1
+# @date 	2015-01-27
+# =========================================================================
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# =========================================================================
+# Setting 'Windows' or 'Meta' key as $mod
+# =========================================================================
+set $mod Mod4
+
+# =========================================================================
+# Window/System font
+# =========================================================================
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below. ISO 10646 = Unicode
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font pango:DejaVu Sans Mono 10
+font pango:Ubuntu Mono 10
+
+# =========================================================================
+# Window decor
+# =========================================================================
+# NOTE: setting new_window to 1pixel will remove title bars
+#new_window 1pixel
+new_window normal
+new_float normal
+#hide_edge_borders vertical
+
+# =========================================================================
+# Window Colors
+# =========================================================================
+client.background	#151515
+client.focused		#8fbfdc	#8fbfdc	#151515 #ffb964
+client.unfocused	#555753	#555753	#e8e8d3	#ffb964
+client.urgent		#ee8181	#ee8181	#e8e8d3	#ffb964
+
+# =========================================================================
+# Controls
+# =========================================================================
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+# On the originally-config'd machine, this was gnome terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Mod1+l exec ~/.i3/i3lock_custom
+
+# change focus
+bindsym $mod+j focus up
+bindsym $mod+k focus down
+bindsym $mod+l focus right
+bindsym $mod+h focus left 
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move up
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+Shift+z split h
+
+# split in vertical orientation
+bindsym $mod+Shift+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# =========================================================================
+# Workspace Setup
+# =========================================================================
+# Setup named workspaces
+set $ws1 "1: local"
+set $ws2 "2: ssh"
+set $ws3 "3: comms"
+set $ws4 "4: browsing"
+set $ws5 "5: work"
+set $ws6 "6: work"
+set $ws7 "7: work"
+set $ws8 "8: work"
+set $ws9 "9: dude..."
+set $ws0 "0: ...seriously?"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
+
+# =========================================================================
+# System Commands
+# =========================================================================
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut.  Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# =========================================================================
+# Resize
+# =========================================================================
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        
+        # vim bindings
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# =========================================================================
+# i3bar Setup 
+# =========================================================================
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	position top	
+	# see the i3status config for status bar colors
+	status_command i3status
+	font pango:Ubuntu Mono 10
+
+	colors {
+		background	#252525
+		statusline	#e8e8d3
+		separator	#4e4e4e
+		
+		# Formatting for the workspace 'tabs'
+		# -------------------------------------------------
+		# workspace			border		background	text
+		# -------------------------------------------------
+		focused_workspace 	#8fbfdc 	#8fbfdc		#151515
+		active_workspace 	#8fbfdc 	#8fbfdc		#151515
+		inactive_workspace	#555753 	#555753		#e8e8d3
+		urgent_workspace	#ee8181 	#ee8181		#151515
+	}
+}

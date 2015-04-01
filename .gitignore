@@ -1,12 +1,10 @@
 *.swp
 *.swo
 .vim/.netrwhist
+.elinks/bookmarks
 .elinks/cookies
 .elinks/globhist
+.elinks/gotohist
 .elinks/searchhist
-.irssi/awaylog
-.irssi/away.log
-.irssi/scripts/twirssi.ids
-.irssi/scripts/twirssi.json
-.irssi/scripts/twirssi.oauth
+.irssi/
 irclogs
