@@ -65,6 +65,16 @@ set hlsearch				" Highlight searched words
 set fo=tcqnj
 
 " --------------------------------------------------------------------------------
+" Custom mappings for Vimux
+" --------------------------------------------------------------------------------
+map rp  :VimuxPromptCommand<CR>
+map rl  :VimuxRunLastCommand<CR>
+map ri  :VimuxInspectRunner<CR>
+map rx  :VimuxCloseRunner<CR>
+map rs  :VimuxInterruptRunner<CR>
+map rs  :call VimuxZoomRunner<CR>
+
+" --------------------------------------------------------------------------------
 " GUI setup for gvim (minimal) 
 " --------------------------------------------------------------------------------
 set guioptions=
