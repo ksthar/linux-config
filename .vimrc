@@ -52,7 +52,12 @@ set modelines=5				" Read up to five modelines
 set hlsearch				" Highlight searched words
 
 " --------------------------------------------------------------------------------
-" Special Options 
+" Git
+" --------------------------------------------------------------------------------
+set statusline=%<%f\ %{fugitive#statusline()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
+" --------------------------------------------------------------------------------
+" Special Format Options 
 " --------------------------------------------------------------------------------
 " t = auto-wrap text using textwidth
 " c = auto-wrap, use comment leader 
