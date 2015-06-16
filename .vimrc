@@ -52,7 +52,19 @@ set modelines=5				" Read up to five modelines
 set hlsearch				" Highlight searched words
 
 " --------------------------------------------------------------------------------
-" Special Options 
+" Git
+" --------------------------------------------------------------------------------
+"  Add the git branch to the status line
+set statusline=%<%f\ %{fugitive#statusline()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
+" --------------------------------------------------------------------------------
+" NERDTree
+" --------------------------------------------------------------------------------
+"  Fix the 'broken arrows' bug
+let g:NERDTreeDirArrows=0
+
+" --------------------------------------------------------------------------------
+" Special Format Options 
 " --------------------------------------------------------------------------------
 " t = auto-wrap text using textwidth
 " c = auto-wrap, use comment leader 
@@ -63,6 +75,16 @@ set hlsearch				" Highlight searched words
 " NOTE: older versions of vim may not recognize all of these options.
 "
 set fo=tcqnj
+
+" --------------------------------------------------------------------------------
+" Custom mappings for Vimux
+" --------------------------------------------------------------------------------
+map rp  :VimuxPromptCommand<CR>
+map rl  :VimuxRunLastCommand<CR>
+map ri  :VimuxInspectRunner<CR>
+map rx  :VimuxCloseRunner<CR>
+map rs  :VimuxInterruptRunner<CR>
+map rs  :call VimuxZoomRunner<CR>
 
 " --------------------------------------------------------------------------------
 " GUI setup for gvim (minimal) 
@@ -104,14 +126,14 @@ set printoptions+=syntax:n
 
 " Plugins to autorun
 " Autorun NERDTree
-"autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree
 
 " Run NERDTree even if a file was not specified
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Run Project with file
-autocmd VimEnter * Project ~/linux-config/.gateway/.projects
+"autocmd VimEnter * Project ~/linux-config/.gateway/.projects
 
 " --------------------------------------------------------------------------------
 "  									EOF
