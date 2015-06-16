@@ -11,6 +11,7 @@ set incfind
 set defsearch=google
 
 " this will need to be on your system
-colorscheme simple_dark
+"colorscheme simple_dark
+colorscheme solarized-dark
 hi -append StatusLine color:#ffffff
 
