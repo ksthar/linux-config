@@ -87,7 +87,10 @@ visualizer_sync_interval = "30"
 #visualizer_type = "wave" (spectrum/wave)
 visualizer_type = "spectrum" (spectrum/wave)
 
+# The first character is for the wave visualizer, the second is for the
+# spectrum
 visualizer_look = "◆│"
+
 # In some terminals, the above character will not display properly.  Below is
 # an alternative that should work.
 #visualizer_look = "||"

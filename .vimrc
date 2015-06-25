@@ -108,8 +108,8 @@ colorscheme jellybeans		" Select jellybeans as default colorscheme
 " Doxygen Toolkit
 " --------------------------------------------------------------------------------
 let g:DoxygenToolkit_authorName="Harlan Shoop"
-let g:DoxygenToolkit_blockHeader="****************************************************************** " 
-let g:DoxygenToolkit_blockFooter="****************************************************************** "
+let g:DoxygenToolkit_blockHeader="------------------------------------------------------------------ " 
+let g:DoxygenToolkit_blockFooter="------------------------------------------------------------------ "
 
 " --------------------------------------------------------------------------------
 "  Printing
