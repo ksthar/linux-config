@@ -1,11 +1,34 @@
-*.swp
-*.swo
+# --------------------------------------------------
+# Har's gitignore for linux-config
+# Update: 2016-01-14
+# --------------------------------------------------
+# Ignore vim artifacts and plugins with their 
+# own repos
+# --------------------------------------------------
+**/*.swp
+**/*.swo
+**/*~
+**/.*~
 .vim/.netrwhist
+.vim/bundle/nerdtree/**
+.vim/bundle/vim-fugitive/**
+
+# --------------------------------------------------
+# Ignore elinks data
+# --------------------------------------------------
 .elinks/bookmarks
 .elinks/cookies
 .elinks/globhist
 .elinks/gotohist
 .elinks/searchhist
-.irssi/
-.pentadactyl/
+
+# --------------------------------------------------
+# Ignore personal irssi data
+# --------------------------------------------------
+.irssi/**
 irclogs
+
+# --------------------------------------------------
+# Ignore all pentadactyl data
+# --------------------------------------------------
+.pentadactyl/**
