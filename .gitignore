@@ -1,11 +1,24 @@
+
+# Ignore vim artifacts
+*~
+.*~
 *.swp
 *.swo
 .vim/.netrwhist
+**/nerdtree/**
+**/vim-fugitive/**
+
+# Ignore elinks 
 .elinks/bookmarks
 .elinks/cookies
 .elinks/globhist
 .elinks/gotohist
 .elinks/searchhist
+
+# irssi
 .irssi/
-.pentadactyl/
 irclogs
+
+# pentadactyl
+.pentadactyl/
+
