@@ -70,7 +70,7 @@ printf "\033[037m";
 echo "> (2 of 5) Setting up git:"
 echo "-------------------------------------------------------------------"
 printf "\033[036m";
-cd linux-config
+cd $HOME/linux-config
 git config --global user.name   "Harlan Shoop"
 git config --global user.email  "harlan@kstechnologies.com"
 git config --global color.ui    "auto"
@@ -149,3 +149,4 @@ echo "                              EOF"
 echo "-------------------------------------------------------------------"
 printf "\033[037m";
 echo ""
+cd $HOME
