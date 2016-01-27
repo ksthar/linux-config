@@ -105,7 +105,7 @@ echo "> (4 of 5) Setting up symlinks:"
 echo "-------------------------------------------------------------------"
 printf "\033[032m";
 cd $HOME
-echo "... bashrc"
+echo "... .bashrc"
 printf "\033[036m";
 rm .bashrc
 ln -s linux-config/.bashrc 
