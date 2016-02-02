@@ -10,8 +10,8 @@
 **/*~
 **/.*~
 .vim/.netrwhist
-**/bundle/nerdtree/**
-**/bundle/vim-fugitive/**
+.vim/bundle/nerdtree/**
+.vim/bundle/vim-fugitive/**
 
 # --------------------------------------------------
 # Ignore elinks data
