@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/bin/bash
 #
 # 2016-01-14
 # ----------------------------------------------------------------------
@@ -68,19 +68,17 @@ elif [ "$(uname)" == "FreeBSD" ]; then
 	MYINTIP=$(ifconfig | awk '/inet\ / { print $2 }' | head -n1)
 	MYDATE=$(date +"%D")' '$(date | cut -c 1-3)' '$(date | cut -c 19-23);
 
-# Others...
+# Edison: check IP of wlan0 and fix hostname
+elif [ `uname -a | awk '/edison/ {x=1} END {print 1-x}'` == 0 ]; then
+    MYHOST=$(hostname)
+    MYDATE=$(date +"%D")' '$(date | cut -c 1-3)' '$(date | cut -c 12-16)
+    MYINTIP=$(ifconfig wlan0 | awk '/inet\ / { print $2 }' | awk '{ split( $0,a,":"); print a[2]}' | tail -1);
+
+# Generic linux: just check eth0
 else
-    # if we're using an edison, check IP of wlan0 and fix hostname
-    if [ `uname -a | awk '/edison/ {x=1} END {print 1-x}'` == 0 ]; then
-        MYHOST=$(hostname)
-        MYINTIP=$(ifconfig wlan0 | awk '/inet\ / { print $2 }' | awk '{ split( $0,a,":"); print a[2]}' | tail -1);
+    MYINTIP=$(ifconfig eth0 | awk '/inet\ / { print $2 }' | awk '{ split( $0,a,":"); print a[2]}' | tail -1);
 
-    # for stock linux, just check eth0
-    else
-        MYINTIP=$(ifconfig eth0 | awk '/inet\ / { print $2 }' | awk '{ split( $0,a,":"); print a[2]}' | tail -1)
-
-    fi
-	MYDATE=$(date +"%D")' '$(date | cut -c 1-3)' '$(date | cut -c 12-16);
+    MYDATE=$(date +"%D")' '$(date | cut -c 1-3)' '$(date | cut -c 12-16);
 fi	
 
 # ----------------------------------------------------------------------
