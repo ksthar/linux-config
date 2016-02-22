@@ -8,7 +8,7 @@ set -g status-bg colour237
 set -g status-fg white 
 
 # colors to hilite current window in status bar
-set-window-option -g window-status-current-fg black
+set-window-option -g window-status-current-fg colour0
 set-window-option -g window-status-current-bg white
 
 # colors used for display-panes command (show pane numbers)
@@ -22,7 +22,7 @@ set -g pane-active-border-fg white
 set -g pane-active-border-bg default
 
 # colors used when you enter a command (mod + :)
-set -g message-bg black
+set -g message-bg colour0
 set -g message-fg green
 
 # not sure when this appears...

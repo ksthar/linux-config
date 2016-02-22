@@ -74,7 +74,7 @@ let g:NERDTreeDirArrows=0
 "
 " NOTE: older versions of vim may not recognize all of these options.
 "
-set fo=tcqnj
+set fo=tcqn
 
 " --------------------------------------------------------------------------------
 " Custom mappings for Vimux

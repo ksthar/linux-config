@@ -53,15 +53,22 @@ fi
 # ----------------------------------------------------------------------
 # Find local IP and date/time
 # ----------------------------------------------------------------------
-# If we're using cygwin, adjust ipconfig processing
+# Windows Cygwin
 if [ "$(uname -o)" == "Cygwin" ]; then
 	MYINTIP=$(ipconfig | awk '/IPv4\ / { print $14 }' | head -1)
 	MYDATE=$(date +"%D")' '$(date | cut -c 1-3)' '$(date | cut -c 19-23);
 
+# Mac
+elif [ "$(uname -a | awk '{ print $1 }')" == "Darwin" ]; then
+	MYINTIP=$(ifconfig en0 | awk '/inet\ / { print $2 }' )
+	MYDATE=$(date +"%D")' '$(date | cut -c 1-3)' '$(date | cut -c 12-16);
+
+# FreeBSD
 elif [ "$(uname)" == "FreeBSD" ]; then
 	MYINTIP=$(ifconfig | awk '/inet\ / { print $2 }' | head -n1)
 	MYDATE=$(date +"%D")' '$(date | cut -c 1-3)' '$(date | cut -c 19-23);
 
+# Others...
 else
     # if we're using an edison, check IP of wlan0 and fix hostname
     if [ `uname -a | awk '/edison/ {x=1} END {print 1-x}'` == 0 ]; then
@@ -83,3 +90,4 @@ echo ' #[fg=white]#[bg=colour237] Hostname: #[fg=yellow]#[bg=black] '$MYHOST\
 ' #[fg=white]#[bg=colour237] Int: #[fg=yellow]#[bg=black] '$MYINTIP\
 ' #[fg=white]#[bg=colour237] Ext: #[fg=yellow]#[bg=black] '$MYEXTIP\
 ' #[fg=black]#[bg=white] '$MYDATE' '
+

@@ -1,3 +1,29 @@
+=======[ DROPBOX ]======
+
+Dropbox=$HOME/Dropbox CD=. {
+ KST-Harlan=KST-Harlan CD=. {
+   Allegion=Allegion CD=.{
+    Sprint11Notes.otl
+    Sprint12_Triage_3-31-15.otl
+    Sprint_11_Notes.otl
+   }
+   Astute=Astute CD=. {
+   }
+   KST=KST CD=. {
+     Sprint11Notes.otl
+     Sprint12_Triage_3-31-15.otl
+     Sprint_11_Notes.otl
+     Molecule_Thoughts.otl
+   }
+   SrDesign2015/
+   roundTrip_8-20-14*
+   Makefile.am
+   SrDesign20150320.otl
+   configure.ac
+   jellybeans-osx.terminal
+ }
+}
+
 =====[ GATEWAY SRC ]====
 
 factorymgr=/neptune/AllegionGateway/runtime/src/factorymgr CD=. {
@@ -38,10 +64,17 @@ factorymgr=/neptune/AllegionGateway/runtime/src/factorymgr CD=. {
  .gitignore
 }
 gwmgr=/neptune/AllegionGateway/runtime/src/gwmgr CD=. {
- docs=./docs CD=. {
+ docs=docs CD=. {
  }
- src=./src CD=. {
-  state=./state CD=.{
+ src=src CD=. {
+  ipc=ipc CD=.{
+   migration.otl
+   ipc.c
+   ipc_fw.c
+   ipc_gw.c
+   ipc_mgrs.c
+  }
+  state=state CD=.{
    states.h
    any.c
    fdr.c
@@ -50,10 +83,11 @@ gwmgr=/neptune/AllegionGateway/runtime/src/gwmgr CD=. {
    timeinit.c
    uncaptured.c
   }
-  superman=./superman CD=.{
-   superman_state.c
+  superman=superman CD=.{
+   superman.h
+   superman.c
   }
-  system=./system CD=. {
+  system=system CD=. {
    80211.c
    gw_time.c
    thread_fdr.c
@@ -72,7 +106,6 @@ gwmgr=/neptune/AllegionGateway/runtime/src/gwmgr CD=. {
   debug.h
   gwsupvsr_common.h
   cfgdata.c
-  ipc.c
   main.c
   ui.c
 

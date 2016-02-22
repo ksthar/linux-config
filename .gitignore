@@ -9,26 +9,26 @@
 **/*.swo
 **/*~
 **/.*~
-.vim/.netrwhist
-.vim/bundle/nerdtree/**
-.vim/bundle/vim-fugitive/**
+**/.vim/.netrwhist
+**/.vim/bundle/nerdtree/**
+**/.vim/bundle/vim-fugitive/**
 
 # --------------------------------------------------
 # Ignore elinks data
 # --------------------------------------------------
-.elinks/bookmarks
-.elinks/cookies
-.elinks/globhist
-.elinks/gotohist
-.elinks/searchhist
+**/.elinks/bookmarks
+**/.elinks/cookies
+**/.elinks/globhist
+**/.elinks/gotohist
+**/.elinks/searchhist
 
 # --------------------------------------------------
 # Ignore personal irssi data
 # --------------------------------------------------
-.irssi/**
-irclogs
+**/.irssi/**
+**/irclogs
 
 # --------------------------------------------------
 # Ignore all pentadactyl data
 # --------------------------------------------------
-.pentadactyl/**
+**/.pentadactyl/**
