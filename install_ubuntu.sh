@@ -42,23 +42,42 @@ echo "... (prep) update"
 printf "\033[036m";
 sudo apt-get update
 printf "\033[032m";
+echo ""
 echo "... (prep) upgrade"
 printf "\033[036m";
-sudo apt-get upgrade
+sudo apt-get -y upgrade
 printf "\033[032m";
+echo ""
 echo "... (prep) autoremove"
 printf "\033[036m";
-sudo apt-get autoremove
+sudo apt-get -y autoremove
 printf "\033[032m";
+echo ""
 echo "... git"
 printf "\033[036m";
 sudo apt-get -y install git
 printf "\033[032m";
+echo ""
+echo "... node"
+printf "\033[036m";
+sudo apt-get -y install node
 printf "\033[032m";
+echo ""
+echo "... nodejs-legacy"
+printf "\033[036m";
+sudo apt-get -y install nodejs-legacy
+printf "\033[032m";
+echo ""
+echo "... npm"
+printf "\033[036m";
+sudo apt-get -y install npm 
+printf "\033[032m";
+echo ""
 echo "... vim-nox"
 printf "\033[036m";
 sudo apt-get -y install vim-nox
 printf "\033[032m";
+echo ""
 echo "... tmux"
 printf "\033[036m";
 sudo apt-get -y install tmux
@@ -110,26 +129,36 @@ printf "\033[036m";
 rm .bashrc
 ln -s linux-config/.bashrc 
 printf "\033[032m";
+echo ""
 echo "... .vim"
 printf "\033[036m";
 ln -s linux-config/.vim 
 printf "\033[032m";
+echo ""
 echo "... .vimrc"
 printf "\033[036m";
 ln -s linux-config/.vimrc
 printf "\033[032m";
+echo ""
 echo "... adding vim plugins"
 printf "\033[036m";
 # need to check if bundle exists, if not create it
+if [ -d $HOME/.vim/bundle ]; then
+    # do nothing at this point
+else
+    mkdir $HOME/.vim/bundle
+fi
 cd $HOME/.vim/bundle
 git clone https://github.com/scrooloose/nerdtree
 git clone https://github.com/tpope/vim-fugitive
 printf "\033[032m";
+echo ""
 echo "... .tmux"
 printf "\033[036m";
 cd $HOME
 ln -s linux-config/.tmux
 printf "\033[032m";
+echo ""
 echo "... .tmux.conf"
 printf "\033[036m";
 cd $HOME
