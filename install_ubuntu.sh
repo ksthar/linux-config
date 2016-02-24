@@ -52,16 +52,16 @@ sudo apt-get autoremove
 printf "\033[032m";
 echo "... git"
 printf "\033[036m";
-sudo apt-get install git
+sudo apt-get -y install git
 printf "\033[032m";
 printf "\033[032m";
 echo "... vim-nox"
 printf "\033[036m";
-sudo apt-get install vim-nox
+sudo apt-get -y install vim-nox
 printf "\033[032m";
 echo "... tmux"
 printf "\033[036m";
-sudo apt-get install tmux
+sudo apt-get -y install tmux
 printf "\033[032m";
 echo ""
 
@@ -120,6 +120,7 @@ ln -s linux-config/.vimrc
 printf "\033[032m";
 echo "... adding vim plugins"
 printf "\033[036m";
+# need to check if bundle exists, if not create it
 cd $HOME/.vim/bundle
 git clone https://github.com/scrooloose/nerdtree
 git clone https://github.com/tpope/vim-fugitive
