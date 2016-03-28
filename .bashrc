@@ -15,6 +15,8 @@ if [ "$(uname -s)" == "Darwin" ]; then
 	alias ls="ls -hG";
 elif [ "$(uname -s)" == "FreeBSD" ]; then
 	alias ls="ls -hG";
+elif [ "$(uname -s)" == "OpenBSD" ]; then
+	alias ls="colorls -FG";
 else
 	# for cygwin
 	if [ "$(uname -o)" == 'Cygwin' ]; then 
