@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 #
 # 2016-01-14
 # ----------------------------------------------------------------------
@@ -67,6 +67,11 @@ elif [ "$(uname -a | awk '{ print $1 }')" == "Darwin" ]; then
 elif [ "$(uname)" == "FreeBSD" ]; then
 	MYINTIP=$(ifconfig | awk '/inet\ / { print $2 }' | head -n1)
 	MYDATE=$(date +"%D")' '$(date | cut -c 1-3)' '$(date | cut -c 19-23);
+    
+# OpenBSD
+elif [ "$(uname)" == "OpenBSD" ]; then
+	MYINTIP=$(ifconfig | awk '/inet\ / { print $2 }' | tail -n1)
+	MYDATE=$(date +"%D")' '$(date | cut -c 1-3)' '$(date | cut -c 12-16);
 
 # Edison: check IP of wlan0 and fix hostname
 elif [ `uname -a | awk '/edison/ {x=1} END {print 1-x}'` == 0 ]; then
