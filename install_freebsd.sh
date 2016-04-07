@@ -26,8 +26,14 @@ echo "-------------------------------------------------------------------"
 echo "                      Har's System Setup"
 echo "-------------------------------------------------------------------"
 printf "\033[036m";
-echo "This script is tailored to an FreeBSD system.  If are using something"
-echo "else, you may need to make adjustments."
+echo "This script is tailored for FreeBSD, and uses FreeBSD-specific applications. " 
+echo "This script may not work with other OS's.  "
+echo ""
+echo "This script will add software and configure your machine in a specific way.  "
+echo "Please review the script prior to running it."
+echo ""
+echo "Also, before running this script, ensure your account has sudo privileges"
+echo "and you are running bash (other shells may not work)."
 echo ""
 echo "              Press [ENTER] to continue, Ctrl-C to quit..."
 read
@@ -73,7 +79,7 @@ echo ""
 # but it covers the case where all we have is this script.  We may adjust
 # this later.
 printf "\033[037m";
-echo "> (3 of 5) Installing repos:"
+echo "> (3 of 5) Installing vim plugin repos:"
 echo "-------------------------------------------------------------------"
 printf "\033[032m";
 echo "... linux-config"
