@@ -25,7 +25,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono 8
 #font pango:Ubuntu Mono 10
 
 # =========================================================================
@@ -87,12 +87,6 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move right
 bindsym $mod+Shift+h move left
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
 # split in horizontal orientation
 bindsym $mod+Shift+z split h
 
@@ -122,41 +116,66 @@ bindsym $mod+a focus parent
 # =========================================================================
 # Workspace Setup
 # =========================================================================
-# Setup named workspaces
-set $ws1 "1: local"
-set $ws2 "2: ssh"
-set $ws3 "3: comms"
-set $ws4 "4: browsing"
-set $ws5 "5: work"
-set $ws6 "6: work"
-set $ws7 "7: work"
-set $ws8 "8: work"
-set $ws9 "9: dude..."
-set $ws0 "0: ...seriously?"
+# Setup named (and numbered) workspaces
+#set $ws1 "1: local"
+#set $ws2 "2: ssh"
+#set $ws3 "3: comms"
+#set $ws4 "4: browsing"
+#set $ws5 "5: work"
+#set $ws6 "6: work"
+#set $ws7 "7: work"
+#set $ws8 "8: work"
+#set $ws9 "9: dude..."
+#set $ws0 "0: ...seriously?"
 
-# switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws0
+# switch to specifically named workspace
+#bindsym $mod+1 workspace $ws1
+#bindsym $mod+2 workspace $ws2
+#bindsym $mod+3 workspace $ws3
+#bindsym $mod+4 workspace $ws4
+#bindsym $mod+5 workspace $ws5
+#bindsym $mod+6 workspace $ws6
+#bindsym $mod+7 workspace $ws7
+#bindsym $mod+8 workspace $ws8
+#bindsym $mod+9 workspace $ws9
+#bindsym $mod+0 workspace $ws0
+
+# switch to workspace based on number, not name
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 0
+
+# just move next/prev
+bindsym $mod+Shift+Left workspace prev
+bindsym $mod+Shift+Right workspace next
+
+# rename current workspace; note that if you start the name with a number
+# like '1: something' you can use the $mod+1 to move to it
+bindsym $mod+Shift+n exec i3-input -F 'rename workspace to "%s"' -P 'New workspace name: '
+
+# goto specified workspace; if you have a named but not numbered workspace
+# you can navigate to it by either using prev/next commands above or by
+# entering the name using the key combo below...
+bindsym $mod+Shift+g exec i3-input -F 'workspace "%s"' -P 'Goto workspace: '
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws0
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 0
 
 # =========================================================================
 # System Commands
@@ -168,7 +187,10 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut.  Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'End your X session?' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+b exec "firefox"
 
 # =========================================================================
 # Resize
@@ -206,6 +228,7 @@ bar {
 	# see the i3status config for status bar colors
 	status_command i3status
 	#font pango:Ubuntu Mono 10
+    font pango:DejaVu Sans Mono 8
 
 	colors {
 		background	#252525
@@ -220,5 +243,4 @@ bar {
 		active_workspace 	#8fbfdc 	#8fbfdc		#151515
 		inactive_workspace	#555753 	#555753		#e8e8d3
 		urgent_workspace	#ee8181 	#ee8181		#151515
-	}
-}
+	
