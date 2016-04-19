@@ -52,6 +52,12 @@ set modelines=5				" Read up to five modelines
 set hlsearch				" Highlight searched words
 
 " --------------------------------------------------------------------------------
+" Backup and Swap Files
+" --------------------------------------------------------------------------------
+set backupdir=$HOME/.vim/tmp
+set directory=$HOME/.vim/tmp
+
+" --------------------------------------------------------------------------------
 " Git
 " --------------------------------------------------------------------------------
 "  Add the git branch to the status line
