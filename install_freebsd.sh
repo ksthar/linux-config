@@ -45,7 +45,7 @@ export CONFBRANCH=master
 
 # Install apps here; make sure dependencies are handled now
 printf "\033[037m";
-echo "> (1 of 5) Installing Standard Apps:"
+echo "> (1 of 6) Installing Standard Apps:"
 echo "-------------------------------------------------------------------"
 printf "\033[032m";
 
@@ -67,7 +67,7 @@ echo ""
 
 # Setup git config
 printf "\033[037m";
-echo "> (2 of 5) Setting up git:"
+echo "> (2 of 6) Setting up git:"
 echo "-------------------------------------------------------------------"
 printf "\033[036m";
 cd $CONFDIR
@@ -84,7 +84,7 @@ echo ""
 # For FreeBSD, symlink /usr/local/bin/bash to /bin/bash; this will allow us to
 # standardize on bash's location for our shell scripts across the BSD's and Linux
 printf "\033[037m";
-echo "> (3 of 5) Symlink bash:"
+echo "> (3 of 6) Symlink bash:"
 echo "-------------------------------------------------------------------"
 printf "\033[036m";
 sudo ln -s /usr/local/bin/bash /bin/bash
@@ -93,7 +93,7 @@ echo ""
 
 # Setup all the symlinks to the included configs
 printf "\033[037m";
-echo "> (4 of 5) Setting up config symlinks:"
+echo "> (4 of 6) Setting up config symlinks:"
 echo "-------------------------------------------------------------------"
 printf "\033[032m";
 
@@ -141,19 +141,25 @@ ln -s $CONFDIR/.tmux.conf $HOME/.
 echo ""
 
 printf "\033[037m";
-echo "> (5 of 5) Sourcing new bashrc..."
+echo "> (5 of 6) Sourcing new bashrc..."
 echo "-------------------------------------------------------------------"
 printf "\033[032m";
 # Add source command to .profile; this will fix login and tmux behavior
 echo "source $HOME/.bashrc" >> $HOME/.profile
 # Source .bashrc for this session
 source $HOME/.bashrc
+
+printf "\033[037m";
+echo "> (6 of 6) Patching login.conf for UTF-8..."
+echo "-------------------------------------------------------------------"
+printf "\033[032m";
+sudo patch /etc/login.conf $CONFDIR/patch-etc-login.conf
 echo "... Done"
 echo ""
 
 printf "\033[034m";
 echo "-------------------------------------------------------------------"
-echo "                              EOF"
+echo "                          >> EOF <<"
 echo "-------------------------------------------------------------------"
 printf "\033[037m";
 echo ""
