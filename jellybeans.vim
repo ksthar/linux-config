@@ -472,7 +472,8 @@ if !s:low_color
     hi  CursorLine      ctermbg=234
     hi  TabLine         ctermbg=240     ctermfg=188  
     hi  TabLineFill     ctermbg=238 
-    hi  TabLineSel      ctermbg=39      ctermfg=16
+    hi  TabLineSel      ctermbg=233     ctermfg=35 
+    "hi  Title           ctermfg=188
     hi  SpecialKey      ctermbg=234
     hi  NonText         ctermbg=233
     hi  LineNr          ctermbg=233
