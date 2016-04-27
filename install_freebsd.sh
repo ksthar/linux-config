@@ -144,6 +144,9 @@ printf "\033[037m";
 echo "> (5 of 5) Sourcing new bashrc..."
 echo "-------------------------------------------------------------------"
 printf "\033[032m";
+# Add source command to .profile; this will fix login and tmux behavior
+echo "source $HOME/.bashrc" >> $HOME/.profile
+# Source .bashrc for this session
 source $HOME/.bashrc
 echo "... Done"
 echo ""
