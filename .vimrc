@@ -28,13 +28,13 @@ execute pathogen#infect()
 " --------------------------------------------------------------------------------
 " Syntax Autocompletion
 " --------------------------------------------------------------------------------
-set omnifunc=syntaxcomplete#Complete
+set omnifunc  = syntaxcomplete#Complete
 
 " --------------------------------------------------------------------------------
 " Command Autocompletion
 " --------------------------------------------------------------------------------
 set wildmenu
-set wildmode=list:longest,full
+set wildmode  = list:longest,full
 
 " --------------------------------------------------------------------------------
 " General Formatting Options
@@ -42,20 +42,20 @@ set wildmode=list:longest,full
 syntax on					" Turn on syntax highlighting
 set number					" Turn on line numbers
 set ruler					" Turn on ruler 
-set ts=4					" Set tabstops to 4 spaces
-set sw=4					" Set shift width to 4 spaces
 set expandtab				" Use spaces instead of tabs
-set numberwidth=6			" Allow six spaces for line numbers
-set foldcolumn=3			" Use 3 spaces for fold column
 set modeline				" Use modelines included in files
-set modelines=5				" Read up to five modelines
 set hlsearch				" Highlight searched words
+set ts           = 4		" Set tabstops to 4 spaces
+set sw           = 4		" Set shift width to 4 spaces
+set numberwidth  = 6		" Allow six spaces for line numbers
+set foldcolumn   = 3		" Use 3 spaces for fold column
+set modelines    = 5		" Read up to five modelines
 
 " --------------------------------------------------------------------------------
 " Backup and Swap Files
 " --------------------------------------------------------------------------------
-set backupdir=$HOME/.vim/tmp
-set directory=$HOME/.vim/tmp
+set backupdir  = $HOME/.vim/tmp
+set directory  = $HOME/.vim/tmp
 
 " --------------------------------------------------------------------------------
 " Git
@@ -85,43 +85,49 @@ set fo=tcqn
 " --------------------------------------------------------------------------------
 " Custom mappings for Vimux
 " --------------------------------------------------------------------------------
-map rp  :VimuxPromptCommand<CR>
-map rl  :VimuxRunLastCommand<CR>
-map ri  :VimuxInspectRunner<CR>
-map rx  :VimuxCloseRunner<CR>
-map rs  :VimuxInterruptRunner<CR>
-map rs  :call VimuxZoomRunner<CR>
+map rp  : VimuxPromptCommand    <CR>
+map rl  : VimuxRunLastCommand   <CR>
+map ri  : VimuxInspectRunner    <CR>
+map rx  : VimuxCloseRunner      <CR>
+map rs  : VimuxInterruptRunner  <CR>
+map rs  : call VimuxZoomRunner  <CR>
 
 " --------------------------------------------------------------------------------
 " GUI setup for gvim (minimal) 
 " --------------------------------------------------------------------------------
+"  Clean the GUI options for minimalist UI
 set guioptions=
+"  Set font
 "Windows...
 "set guifont=consolas:h10
 "Ubuntu...
 set guifont=Ubuntu\ Mono\ 10
-" --------------------------------------------------------------------------------
 
 " --------------------------------------------------------------------------------
 " Color Scheme
 " --------------------------------------------------------------------------------
-set t_Co=256				" Turn on 256 color compatibility
-set bg=dark					" Setup for dark background
+set t_Co  = 256				" Turn on 256 color compatibility
+set bg    = dark			" Setup for dark background
 colorscheme jellybeans		" Select jellybeans as default colorscheme
 "colorscheme slate			" Fallback colorscheme is slate
 
 " --------------------------------------------------------------------------------
 " Doxygen Toolkit
 " --------------------------------------------------------------------------------
-let g:DoxygenToolkit_authorName="Harlan Shoop"
-let g:DoxygenToolkit_blockHeader="------------------------------------------------------------------ " 
-let g:DoxygenToolkit_blockFooter="------------------------------------------------------------------ "
+let g:DoxygenToolkit_authorName   = "Harlan Shoop"
+let g:DoxygenToolkit_blockHeader  = "------------------------------------------------------------------ "
+let g:DoxygenToolkit_blockFooter  = "------------------------------------------------------------------ "
 
 " --------------------------------------------------------------------------------
 "  Printing
 " --------------------------------------------------------------------------------
 " When I print to laser, I want B&W
 set printoptions+=syntax:n
+
+" --------------------------------------------------------------------------------
+"  Tabular Macros
+" --------------------------------------------------------------------------------
+"  Tabular Macros are in: $HOME/linux-config/.vim/after/plugin/TabularPatterns.vim
 
 " --------------------------------------------------------------------------------
 "  Autorun Options
