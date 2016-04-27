@@ -79,7 +79,7 @@ echo ""
 # but it covers the case where all we have is this script.  We may adjust
 # this later.
 printf "\033[037m";
-echo "> (3 of 5) Installing vim plugin repos:"
+echo "> (3 of 5) Installing config system:"
 echo "-------------------------------------------------------------------"
 printf "\033[032m";
 echo "... linux-config"
@@ -111,11 +111,17 @@ echo "... .vimrc"
 printf "\033[036m";
 ln -s linux-config/.vimrc
 printf "\033[032m";
+echo "... creating vim directories"
+printf "\033[036m";
+mkdir $HOME/.vim/bundle
+mkdir $HOME/.vim/tmp
+printf "\033[032m";
 echo "... adding vim plugins"
 printf "\033[036m";
 cd $HOME/.vim/bundle
 git clone https://github.com/scrooloose/nerdtree
 git clone https://github.com/tpope/vim-fugitive
+git clone https://github.com/godlygeek/tabular
 printf "\033[032m";
 echo "... .tmux"
 printf "\033[036m";
