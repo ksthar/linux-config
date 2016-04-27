@@ -39,19 +39,26 @@ echo "              Press [ENTER] to continue, Ctrl-C to quit..."
 read
 echo ""
 
+# Setup some working variables
+export CONFDIR=$HOME/linux-config
+export CONFBRANCH=master
+
 # Install apps here; make sure dependencies are handled now
 printf "\033[037m";
 echo "> (1 of 5) Installing Standard Apps:"
 echo "-------------------------------------------------------------------"
 printf "\033[032m";
+
 echo "... git"
 printf "\033[036m";
 sudo pkg install git
 printf "\033[032m";
+
 echo "... vim"
 printf "\033[036m";
 sudo pkg install vim
 printf "\033[032m";
+
 echo "... tmux"
 printf "\033[036m";
 sudo pkg install tmux
@@ -63,7 +70,7 @@ printf "\033[037m";
 echo "> (2 of 5) Setting up git:"
 echo "-------------------------------------------------------------------"
 printf "\033[036m";
-cd $HOME/linux-config
+cd $CONFDIR
 git config --global user.name   "Harlan Shoop"
 git config --global user.email  "harlan@kstechnologies.com"
 git config --global color.ui    "auto"
@@ -84,11 +91,11 @@ echo "-------------------------------------------------------------------"
 printf "\033[032m";
 echo "... linux-config"
 printf "\033[036m";
-cd $HOME
-git clone https://github.com/ksthar/linux-config.git
-# If we already have it installed, let's update to the latest
-cd $HOME/linux-config
-git pull origin master
+
+# Update linux-config
+cd $CONFDIR
+git pull origin $CONFBRANCH
+
 printf "\033[032m";
 echo ""
 
@@ -97,41 +104,48 @@ printf "\033[037m";
 echo "> (4 of 5) Setting up symlinks:"
 echo "-------------------------------------------------------------------"
 printf "\033[032m";
-cd $HOME
+
 echo "... .bashrc"
 printf "\033[036m";
-rm .bashrc
-ln -s linux-config/.bashrc 
+ln -s $CONFDIR/.bashrc  $HOME/.
 printf "\033[032m";
+
 echo "... .vim"
 printf "\033[036m";
-ln -s linux-config/.vim 
+ln -s $CONFDIR/.vim  $HOME/.
 printf "\033[032m";
+
 echo "... .vimrc"
 printf "\033[036m";
-ln -s linux-config/.vimrc
+ln -s $CONFDIR/.vimrc $HOME/.
 printf "\033[032m";
+
 echo "... creating vim directories"
 printf "\033[036m";
+# Create directory for pathogen plugins
 mkdir $HOME/.vim/bundle
+
+# Create tmp directory for backups and swap files
 mkdir $HOME/.vim/tmp
 printf "\033[032m";
-echo "... adding vim plugins"
+
+echo "... install favorite vim plugins"
 printf "\033[036m";
-cd $HOME/.vim/bundle
-git clone https://github.com/scrooloose/nerdtree
-git clone https://github.com/tpope/vim-fugitive
-git clone https://github.com/godlygeek/tabular
+
+# Install favorite plugins
+git  clone  https://github.com/scrooloose/nerdtree  $HOME/.vim/bundle/nerdtree
+git  clone  https://github.com/godlygeek/tabular    $HOME/.vim/bundle/tabular
+git  clone  https://github.com/tpope/vim-fugitive   $HOME/.vim/bundle/vim-fugitive
 printf "\033[032m";
+
 echo "... .tmux"
 printf "\033[036m";
-cd $HOME
-ln -s linux-config/.tmux
+ln -s $CONFDIR/.tmux $HOME/.
 printf "\033[032m";
+
 echo "... .tmux.conf"
 printf "\033[036m";
-cd $HOME
-ln -s linux-config/.tmux.conf
+ln -s $CONFDIR/.tmux.conf $HOME/.
 echo ""
 
 printf "\033[037m";
