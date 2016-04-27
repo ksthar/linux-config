@@ -28,13 +28,13 @@ execute pathogen#infect()
 " --------------------------------------------------------------------------------
 " Syntax Autocompletion
 " --------------------------------------------------------------------------------
-set omnifunc  = syntaxcomplete#Complete
+set omnifunc=syntaxcomplete#Complete
 
 " --------------------------------------------------------------------------------
 " Command Autocompletion
 " --------------------------------------------------------------------------------
 set wildmenu
-set wildmode  = list:longest,full
+set wildmode=list:longest,full
 
 " --------------------------------------------------------------------------------
 " General Formatting Options
@@ -45,17 +45,17 @@ set ruler					" Turn on ruler
 set expandtab				" Use spaces instead of tabs
 set modeline				" Use modelines included in files
 set hlsearch				" Highlight searched words
-set ts           = 4		" Set tabstops to 4 spaces
-set sw           = 4		" Set shift width to 4 spaces
-set numberwidth  = 6		" Allow six spaces for line numbers
-set foldcolumn   = 3		" Use 3 spaces for fold column
-set modelines    = 5		" Read up to five modelines
+set ts=4		            " Set tabstops to 4 spaces
+set sw=4		            " Set shift width to 4 spaces
+set numberwidth=6		    " Allow six spaces for line numbers
+set foldcolumn=3		    " Use 3 spaces for fold column
+set modelines=5		        " Read up to five modelines
 
 " --------------------------------------------------------------------------------
 " Backup and Swap Files
 " --------------------------------------------------------------------------------
-set backupdir  = $HOME/.vim/tmp
-set directory  = $HOME/.vim/tmp
+set backupdir=$HOME/.vim/tmp
+set directory=$HOME/.vim/tmp
 
 " --------------------------------------------------------------------------------
 " Git
@@ -93,6 +93,11 @@ map rs  : VimuxInterruptRunner  <CR>
 map rs  : call VimuxZoomRunner  <CR>
 
 " --------------------------------------------------------------------------------
+" Custom mappings for NERDTree
+" --------------------------------------------------------------------------------
+map nt  : NERDTreeToggle        <CR>
+
+" --------------------------------------------------------------------------------
 " GUI setup for gvim (minimal) 
 " --------------------------------------------------------------------------------
 "  Clean the GUI options for minimalist UI
@@ -106,8 +111,8 @@ set guifont=Ubuntu\ Mono\ 10
 " --------------------------------------------------------------------------------
 " Color Scheme
 " --------------------------------------------------------------------------------
-set t_Co  = 256				" Turn on 256 color compatibility
-set bg    = dark			" Setup for dark background
+set t_Co=256				" Turn on 256 color compatibility
+set bg=dark			" Setup for dark background
 colorscheme jellybeans		" Select jellybeans as default colorscheme
 "colorscheme slate			" Fallback colorscheme is slate
 
