@@ -81,27 +81,19 @@ git config credential.helper    store
 git config --global -l
 echo ""
 
-# Install any required repos; here we're installing the linux-config repo
-# this is circular since we can only get this from installing linux-config,
-# but it covers the case where all we have is this script.  We may adjust
-# this later.
+# For FreeBSD, symlink /usr/local/bin/bash to /bin/bash; this will allow us to
+# standardize on bash's location for our shell scripts across the BSD's and Linux
 printf "\033[037m";
-echo "> (3 of 5) Installing config system:"
+echo "> (3 of 5) Symlink bash:"
 echo "-------------------------------------------------------------------"
-printf "\033[032m";
-echo "... linux-config"
 printf "\033[036m";
-
-# Update linux-config
-cd $CONFDIR
-git pull origin $CONFBRANCH
-
+sudo ln -s /usr/local/bin/bash /bin/bash
 printf "\033[032m";
 echo ""
 
 # Setup all the symlinks to the included configs
 printf "\033[037m";
-echo "> (4 of 5) Setting up symlinks:"
+echo "> (4 of 5) Setting up config symlinks:"
 echo "-------------------------------------------------------------------"
 printf "\033[032m";
 

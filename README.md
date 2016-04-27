@@ -1,24 +1,23 @@
-linux-config
-============
+# linux-config
 
 This repo contains common config files for my bash-based Linux/BSD systems.
-The idea is that I can clone this repo on a new system, create symlinks in my
-home directory, and have a familiar setup very quickly.  I use several machines
-throughout the day and may instantiate a vm or two on-the-fly.  Having a quick
-way to standardize an environment is very handy.
+The idea is that I can clone this repo on a new system, install my favorite
+programs, create symlinks in my home directory, and have a familiar setup very
+quickly.  I use several machines throughout the day and may instantiate a vm or
+two on-the-fly.  Having a quick way to standardize an environment is very
+handy.
 
 Effort has been made to make the experience consistent across Linux, BSD, Mac,
 and Windows (Cygwin).  Not everything will run seemlessly on all platforms, but
 a bash shell should be consistent in look and feel.
 
-NOTES 
------
+## NOTES 
 - It's good to keep in mind that all the files are copied onto every system.  I
   have err'd on the side of better-to-have-it, but there is a limit here
   somewhere.
 - This is a public repo so I have to be careful about leaking too much personal
   information.  For now, bitlbee and mutt files are not included for that
-  reason.  There may be other files not listed here.  
+  reason.  Separate private repos have been setup for irssi and mutt.
 - Some files/directories are included for specific alias sets that I 'source'
   selectively on certain systems.
 - Installation can be automated on vagrant or docker systems. Handy. 
@@ -27,28 +26,42 @@ NOTES
 - Enough applications are supported here to configure a simple desktop with
   chat/IRC, browsing, text/code editing, music, and session support.
 
-Installation
-------------
-_Directions:_
+## Some Systems That Should "Just Work"
+- Ubuntu 12/14/15
+- FreeBSD 9/10/11
+- OpenBSD 5.4/5.8
+- Yocto
+- Mac OS X
+- Windows 7/8/10 (Cygwin)
 
+## Installation
+_Directions:_
+- Ensure sudo is installed and the user has sudo privileges
+- Ensure the user is running bash
     $ cd $HOME
     $ git clone https://github.com/ksthar/linux-config.git
-Then, simlink the files/directories you want. 
+    $ ./linux-config/install_<os>.sh
 
-_For Example:_
+_Ubuntu Example:_
 
-    $ ln -s linux-config/.bashrc .
-    $ source .bashrc
+    $ cd 
+    $ sudo apt-get -y install git
+    $ git clone https://github.com/ksthar/linux-config
+    $ ./linux-config/install_ubuntu.sh
+    (follow prompts)
 
 
-_Available to Simlink:_
+_Available Configs:_
 - .bashrc
+- .bitlbee (PRIVATE)
+- .bitlbee.conf (PRIVATE)
 - .conkyrc
 - .elinks/
 - .i3/
-- .irssi/
+- .irssi/ (PRIVATE)
 - .minttyrc
 - .mintty--solarized-mod
+- .mutt/ (PRIVATE)
 - .ncmpc/
 - .ncmpcpp/
 - .pentadactylrc
@@ -61,12 +74,9 @@ _Available to Simlink:_
 - README.md
 
 ### Linux vs. FreeBSD
-I use both Linux systems and FBSD systems.  For now, I'm using 'uname -s' and
-'uname -o' to adapt my .bashrc file.  I have not handled the difference in bash
-locations (/bin/bash (linux) vs. /usr/local/bin/bash (FreeBSD)), so some
-scripts will not run without modification (the right.sh script for tmux, for
-example).  Also, the output of some common tools (e.g. ifconfig) is different
-causing strangeness when scripts (like right.sh) expect a certain format.
+I use both Linux systems and FBSD systems.  For now, I'm using variations of
+'uname' to adapt my .bashrc file. In the install\_freebsd.sh script, I symlink
+/usr/local/bin/bash to /bin/bash so that my linux-style bash scripts will work.
 
 ### Cygwin
 I have added support for Cygwin.  The .bashrc file checks for a cygwin install
@@ -77,8 +87,7 @@ through .minttyrc) that should be run on new installs.
 I have added some support for Terminal on the Mac. The .bashrc file should
 detect (uname -s) and adjust.
 
-Application Support
--------------------
+## Application Support
 ### conky
 Custom conky config included.
 
@@ -91,6 +100,7 @@ This is the first window manager supported here.  The config file has a
 customized color scheme and some adjustments to the standard commands.
 
 ### Irssi
+*NOTE: irssi-config now a private repo*
 Irssi is my Grand Central station for non-email communications.  I run
 everything through it. Necessary scripts are in .irssi/scripts.
 
@@ -117,6 +127,9 @@ dircolors or by using Tango colors in gnome-terminal with cyan modified to
 #### Irssi: Use Twirssi
 Twirssi has worked better than bitlbee's twitter support and has more features.
 
+### Mutt
+*All mutt configs now in private mutt-config repo.*
+
 ### ncmpcpp
 This is handy to keep in a tmux session.  I use it in conjunction with MPD, and
 have not included those configs.  I prefer this to ncmpc, but have included
@@ -129,9 +142,9 @@ output from ifconfig.
 
 ### Vim
 I have included the CSApprox (for terminal vim colorschemes) in the .vim
-directory.  On Ubuntu, the CSApprox.vim plugin file was missing a statement
-that setup the Normal highlight causing a runtime error.  The included version
-has the patch installed.
+directory.  On Ubuntu 12.04, the CSApprox.vim plugin file was missing a
+statement that setup the Normal highlight causing a runtime error.  The
+included version has the patch installed.
 
 I have also included the jellybeans colorscheme file.  This has been included
 in .vim/colors/, but may need to be moved to /usr/share/vim/vim7x/colors/ (or
@@ -141,15 +154,21 @@ sets this colorscheme as the default.
 Some systems contain a version of vim than does not recognize the 'j' format
 option.  I just delete it for those systems.
 
-TO-DO
------
-- Create an install script that creates the symlinks in the new system.
-- Adapt shell scripts to different bash locations (/bin/bash vs. /usr/local/bin/bash)
-- Adapt scripts to different utility outputs (e.g. ifconfig outputs differently
+I have configured vim to use .vim/tmp for swap and backup files.  This helps
+keep git repos clear of vim artifacts.
+
+The install scripts will attempt to install several plugins for vim from github.  
+
+## TO-DO
+- [DONE] Create an install script that creates the symlinks in the new system.
+- [DONE] Adapt shell scripts to different bash locations (/bin/bash vs. /usr/local/bin/bash)
+- [DONE] Adapt scripts to different utility outputs (e.g. ifconfig outputs differently
   on some systems)
-- Create a 'supported application' list
-- ?Create bundles for specific distros
-- ?Scrub bitlbee conf and dir
-- ?Add mutt: scrub files 
-- ?Create 'light' and 'complete' repos if this one gets too heavy
+- [DONE] Create a 'supported application' list
+- [DONE] Create bundles for specific distros (install scripts)
+- [DONE] Scrub bitlbee conf and dir (created private repos for sensitive configs)
+- [DONE] Add mutt: scrub files  (see prev)
+- ?Create 'light' and 'complete' branches if this one gets too heavy
 - ?Create 'laptop' and 'workstation' branches
+
+## EOF
