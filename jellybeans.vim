@@ -470,8 +470,8 @@ if !s:low_color
     hi  SignColumn      ctermbg=236
     hi  CursorColumn    ctermbg=234
     hi  CursorLine      ctermbg=234
-    hi  TabLine         ctermbg=240     ctermfg=234  
-    hi  TabLineFill     ctermbg=234 
+    hi  TabLine         ctermbg=240     ctermfg=188  
+    hi  TabLineFill     ctermbg=238 
     hi  TabLineSel      ctermbg=39      ctermfg=16
     hi  SpecialKey      ctermbg=234
     hi  NonText         ctermbg=233
