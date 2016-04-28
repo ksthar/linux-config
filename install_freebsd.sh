@@ -147,7 +147,7 @@ echo "-------------------------------------------------------------------"
 
 echo "> (5 of 7) Sourcing new bashrc..."
 echo "-------------------------------------------------------------------"
-    printf "\033[032m";
+    printf "\033[036m";
     # Add source command to .profile; this will fix login and tmux behavior
     echo "source $HOME/.bashrc" >> $HOME/.profile
     # Source .bashrc for this session
@@ -157,7 +157,7 @@ echo "-------------------------------------------------------------------"
 
 echo "> (6 of 7) Patching login.conf for UTF-8..."
 echo "-------------------------------------------------------------------"
-    printf "\033[032m";
+    printf "\033[036m";
     sudo patch /etc/login.conf $CONFDIR/patch-etc-login.conf
     echo ""
     
@@ -165,9 +165,8 @@ echo "-------------------------------------------------------------------"
 
 echo "> (7 of 7) Updating motd..."
 echo "-------------------------------------------------------------------"
-    printf "\033[032m";
+    printf "\033[036m";
     sudo cp $CONFDIR/kst_motd /etc/motd
-    echo "... Done"
     echo ""
 
     printf "\033[034m";
