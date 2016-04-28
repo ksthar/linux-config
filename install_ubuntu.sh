@@ -1,4 +1,4 @@
-#!/bin/bash
+
 # -------------------------------------------------------------------
 # @file     install.sh
 # @brief    This script is designed to get an Ubuntu system up and 
@@ -35,7 +35,7 @@ echo ""
 
 # Install apps here; make sure dependencies are handled now
 printf "\033[037m";
-echo "> (1 of 5) Installing Standard Apps:"
+echo "> (1 of 6) Installing Standard Apps:"
 echo "-------------------------------------------------------------------"
 printf "\033[032m";
 echo "... (prep) update"
@@ -86,7 +86,7 @@ echo ""
 
 # Setup git config
 printf "\033[037m";
-echo "> (2 of 5) Setting up git:"
+echo "> (2 of 6) Setting up git:"
 echo "-------------------------------------------------------------------"
 printf "\033[036m";
 cd $HOME/linux-config
@@ -105,7 +105,7 @@ echo ""
 # but it covers the case where all we have is this script.  We may adjust
 # this later.
 printf "\033[037m";
-echo "> (3 of 5) Installing repos:"
+echo "> (3 of 6) Installing repos:"
 echo "-------------------------------------------------------------------"
 printf "\033[032m";
 echo "... linux-config"
@@ -120,7 +120,7 @@ echo ""
 
 # Setup all the symlinks to the included configs
 printf "\033[037m";
-echo "> (4 of 5) Setting up symlinks:"
+echo "> (4 of 6) Setting up symlinks:"
 echo "-------------------------------------------------------------------"
 printf "\033[032m";
 cd $HOME
@@ -145,12 +145,15 @@ printf "\033[036m";
 # need to check if bundle exists, if not create it
 if [ -d $HOME/.vim/bundle ]; then
     # do nothing at this point
+    echo "bundle directory exists"
 else
     mkdir $HOME/.vim/bundle
 fi
 cd $HOME/.vim/bundle
 git clone https://github.com/scrooloose/nerdtree
 git clone https://github.com/tpope/vim-fugitive
+git clone https://github.com/godlygeek/tabular
+
 printf "\033[032m";
 echo ""
 echo "... .tmux"
@@ -166,12 +169,18 @@ ln -s linux-config/.tmux.conf
 echo ""
 
 printf "\033[037m";
-echo "> (5 of 5) Sourcing new bashrc..."
+echo "> (5 of 6) Sourcing new bashrc..."
 echo "-------------------------------------------------------------------"
 printf "\033[032m";
 source $HOME/.bashrc
 echo "... Done"
 echo ""
+
+printf "\033[037m";
+echo "> (6 of 6) Patching motd..."
+echo "-------------------------------------------------------------------"
+printf "\033[032m";
+sudo patch /etc/update-motd.d/00-header $HOME/linux-config/patch-etc-update-motd-d-00-header
 
 printf "\033[034m";
 echo "-------------------------------------------------------------------"

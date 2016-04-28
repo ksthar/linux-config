@@ -303,8 +303,8 @@ if version >= 700
   call s:X("CursorColumn","","1c1c1c","","",s:termBlack)
   call s:X("MatchParen","ffffff","80a090","bold","","DarkCyan")
 
-  call s:X("TabLine","000000","b0b8c0","italic","",s:termBlack)
-  call s:X("TabLineFill","9098a0","","","",s:termBlack)
+  call s:X("TabLine","151515","b0b8c0","italic","",s:termBlack)
+  call s:X("TabLineFill","151515","","","",s:termBlack)
   call s:X("TabLineSel","000000","f0f0f0","italic,bold",s:termBlack,"White")
 
   " Auto-completion
@@ -464,18 +464,22 @@ call s:X("PreciseJumpTarget","B9ED67","405026","","White","Green")
 
 " Manual overrides for 256-color terminals. Dark colors auto-map badly.
 if !s:low_color
-  hi StatusLineNC ctermbg=235
-  hi Folded ctermbg=236
-  hi FoldColumn ctermbg=234
-  hi SignColumn ctermbg=236
-  hi CursorColumn ctermbg=234
-  hi CursorLine ctermbg=234
-  hi SpecialKey ctermbg=234
-  hi NonText ctermbg=233
-  hi LineNr ctermbg=233
-  hi DiffText ctermfg=81
-  hi Normal ctermbg=233
-  hi DbgBreakPt ctermbg=53
+    hi  StatusLineNC    ctermbg=235
+    hi  Folded          ctermbg=236
+    hi  FoldColumn      ctermbg=234
+    hi  SignColumn      ctermbg=236
+    hi  CursorColumn    ctermbg=234
+    hi  CursorLine      ctermbg=234
+    hi  TabLine         ctermbg=240     ctermfg=188  
+    hi  TabLineFill     ctermbg=238 
+    hi  TabLineSel      ctermbg=233     ctermfg=35 
+    "hi  Title           ctermfg=188
+    hi  SpecialKey      ctermbg=234
+    hi  NonText         ctermbg=233
+    hi  LineNr          ctermbg=233
+    hi  DiffText        ctermfg=81
+    hi  Normal          ctermbg=233
+    hi  DbgBreakPt      ctermbg=53
 endif
 
 " delete functions {{{

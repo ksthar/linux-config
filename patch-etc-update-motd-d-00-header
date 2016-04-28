@@ -1,0 +1,24 @@
+--- 00-header.orig	2016-04-28 15:56:07.996464579 +0000
++++ 00-header	2016-04-28 15:55:47.392464579 +0000
+@@ -27,3 +27,21 @@
+ fi
+ 
+ printf "Welcome to %s (%s %s %s)\n" "$DISTRIB_DESCRIPTION" "$(uname -o)" "$(uname -r)" "$(uname -m)"
++
++
++echo "                      ________________________"
++echo "                     |                        |"
++echo "                     |                        |"
++echo "                     |                        |"
++echo "                     |                        |"
++echo "                     |      __ _____________  |"
++echo "                     |     / //_/ ___/_  __/  |"
++echo "                     |    / ,<  \__ \ / /     |"
++echo "                     |   / /| |___/ // /      |"
++echo "                     |  /_/ |_/____//_/       |"
++echo "                     |________________________|"
++echo ""
++echo ""
++echo "            This system operated by KS Technologies, LLC."
++echo "            ---------------------------------------------"
++echo ""
