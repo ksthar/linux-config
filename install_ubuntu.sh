@@ -145,6 +145,7 @@ printf "\033[036m";
 # need to check if bundle exists, if not create it
 if [ -d $HOME/.vim/bundle ]; then
     # do nothing at this point
+    echo "bundle directory exists"
 else
     mkdir $HOME/.vim/bundle
 fi
