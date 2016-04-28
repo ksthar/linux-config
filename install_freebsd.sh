@@ -161,12 +161,12 @@ echo "-------------------------------------------------------------------"
     sudo patch /etc/login.conf $CONFDIR/patch-etc-login.conf
     echo ""
     
-    printf "\033[034m";
+    printf "\033[037m";
 
 echo "> (7 of 7) Updating motd..."
 echo "-------------------------------------------------------------------"
     printf "\033[036m";
-    sudo cp $CONFDIR/kst_motd /etc/motd
+    sudo cp -v $CONFDIR/kst_motd /etc/motd
     echo ""
 
     printf "\033[034m";
