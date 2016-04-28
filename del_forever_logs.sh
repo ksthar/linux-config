@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo forever cleanlogs
+sudo rm /home/ubuntu/.forever/*.log
