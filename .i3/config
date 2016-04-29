@@ -244,3 +244,5 @@ bar {
 		inactive_workspace	#555753 	#555753		#e8e8d3
 		urgent_workspace	#ee8181 	#ee8181		#151515
 	
+    }
+}
