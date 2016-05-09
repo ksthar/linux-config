@@ -68,6 +68,7 @@ git config --global user.name   "Harlan Shoop"
 git config --global user.email  "harlan@kstechnologies.com"
 git config --global color.ui    "auto"
 git config --global core.editor "vim"
+git config --global core.pager  "less -r"
 git config credential.helper    store
 
 # list updated config
