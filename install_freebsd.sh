@@ -159,6 +159,8 @@ echo "> (6 of 7) Patching login.conf for UTF-8..."
 echo "-------------------------------------------------------------------"
     printf "\033[036m";
     sudo patch /etc/login.conf $CONFDIR/patch-etc-login.conf
+    # make sure we apply the changes
+    sudo cap_mkdb /etc/login.conf
     echo ""
     
     printf "\033[037m";
