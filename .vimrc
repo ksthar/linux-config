@@ -82,7 +82,8 @@ let g:NERDTreeDirArrows=0
 "
 set fo=tcqn
 " The indent method is consistent; may need to use 'syntax' with some files.
-set foldmethod=indent
+"set foldmethod=indent
+set foldmethod=marker
 " use zR to open all folds, zM to close all folds.
 
 " --------------------------------------------------------------------------------
