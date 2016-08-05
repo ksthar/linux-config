@@ -58,6 +58,10 @@ echo "-------------------------------------------------------------------"
     echo "... vim"
     printf "\033[036m";
     sudo pkg install vim
+
+    # replace vi with vim
+    sudo mv /usr/bin/vi /usr/bin/vi_orig
+    sudo ln -s /usr/local/bin/vim /usr/bin/vi
     printf "\033[032m";
 
     echo "... tmux"
