@@ -58,6 +58,10 @@ echo "-------------------------------------------------------------------"
     echo "... vim"
     printf "\033[036m";
     sudo pkg install vim
+
+    # replace vi with vim
+    sudo mv /usr/bin/vi /usr/bin/vi_orig
+    sudo ln -s /usr/local/bin/vim /usr/bin/vi
     printf "\033[032m";
 
     echo "... tmux"
@@ -77,6 +81,7 @@ echo "-------------------------------------------------------------------"
     git config --global user.email  "harlan@kstechnologies.com"
     git config --global color.ui    "auto"
     git config --global core.editor "vim"
+    git config --global core.pager  "less -r"
     git config credential.helper    store
 
     # list updated config
@@ -159,6 +164,8 @@ echo "> (6 of 7) Patching login.conf for UTF-8..."
 echo "-------------------------------------------------------------------"
     printf "\033[036m";
     sudo patch /etc/login.conf $CONFDIR/patch-etc-login.conf
+    # make sure we apply the changes
+    sudo cap_mkdb /etc/login.conf
     echo ""
     
     printf "\033[037m";

@@ -82,7 +82,12 @@ let g:NERDTreeDirArrows=0
 "
 set fo=tcqn
 " The indent method is consistent; may need to use 'syntax' with some files.
-set foldmethod=indent
+"set foldmethod=indent
+
+" The marker method gives control over where folds occur, but litters your
+" code with markers
+set foldmethod=marker
+
 " use zR to open all folds, zM to close all folds.
 
 " --------------------------------------------------------------------------------
@@ -115,7 +120,7 @@ set guifont=Ubuntu\ Mono\ 10
 " Color Scheme
 " --------------------------------------------------------------------------------
 set t_Co=256				" Turn on 256 color compatibility
-set bg=dark			" Setup for dark background
+set bg=dark			        " Setup for dark background
 colorscheme jellybeans		" Select jellybeans as default colorscheme
 "colorscheme slate			" Fallback colorscheme is slate
 
