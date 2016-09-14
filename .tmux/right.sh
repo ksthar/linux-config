@@ -66,7 +66,7 @@ elif [ "$(uname -a | awk '{ print $1 }')" == "Darwin" ]; then
 # FreeBSD
 elif [ "$(uname)" == "FreeBSD" ]; then
 	MYINTIP=$(ifconfig | awk '/inet\ / { print $2 }' | head -n1)
-    MYDATE=$(date +"%a %D %H:%m")
+    MYDATE=$(date +"%a %D %H:%M")
     
 # OpenBSD
 elif [ "$(uname)" == "OpenBSD" ]; then
