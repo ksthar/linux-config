@@ -148,6 +148,11 @@ echo "-------------------------------------------------------------------"
     printf "\033[036m";
     ln -s $CONFDIR/.tmux.conf $HOME/.
     echo ""
+
+    echo "... .config"
+    printf "\033[036m";
+    ln -s $CONFDIR/.config $HOME/.
+    echo ""
     printf "\033[037m";
 
 echo "> (5 of 7) Sourcing new bashrc..."

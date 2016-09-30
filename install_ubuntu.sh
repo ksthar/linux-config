@@ -167,6 +167,10 @@ echo "... .tmux.conf"
 printf "\033[036m";
 cd $HOME
 ln -s linux-config/.tmux.conf
+echo "... .config"
+printf "\033[036m";
+cd $HOME
+ln -s linux-config/.config
 echo ""
 
 printf "\033[037m";
