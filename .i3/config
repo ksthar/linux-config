@@ -191,6 +191,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'End your X session?' -b 'Yes
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+b exec "firefox"
+bindsym $mod+Shift+u exec "uzbl-tabbed"
 
 # =========================================================================
 # Resize
