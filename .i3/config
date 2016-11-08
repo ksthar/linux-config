@@ -181,7 +181,7 @@ bindsym $mod+Shift+0 move container to workspace number 0
 # System Commands
 # =========================================================================
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+d reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -190,7 +190,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'End your X session?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+b exec "firefox"
+bindsym $mod+Shift+c exec "chrome"
+bindsym $mod+Shift+f exec "firefox"
 bindsym $mod+Shift+u exec "uzbl-tabbed"
 
 # =========================================================================
@@ -227,7 +228,7 @@ bindsym $mod+r mode "resize"
 bar {
 	position top	
 	# see the i3status config for status bar colors
-	status_command i3status
+	status_command i3status --config ~/.i3/i3status.conf
 	#font pango:Ubuntu Mono 10
     font pango:DejaVu Sans Mono 8
 
