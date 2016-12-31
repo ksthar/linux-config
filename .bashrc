@@ -22,6 +22,7 @@ else
 	if [ "$(uname -o)" == 'Cygwin' ]; then 
 		source linux-config/.minttyrc
 		alias vi="vim";
+        alias ifconfig="ipconfig";
 	fi
 	alias ls="ls -h --color=auto";
 fi
