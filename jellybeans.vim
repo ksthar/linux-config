@@ -315,7 +315,8 @@ endif
 call s:X("Visual","","404040","","",s:termBlack)
 call s:X("Cursor","","b0d0f0","","","")
 
-call s:X("LineNr","605958","151515","none",s:termBlack,"")
+"call s:X("LineNr","605958","151515","none",s:termBlack,"")
+call s:X("LineNr","535D66","1f1f1f","","",s:termBlack)
 call s:X("Comment","888888","","italic","Grey","")
 call s:X("Todo","808080","","bold","White",s:termBlack)
 
@@ -476,7 +477,8 @@ if !s:low_color
     "hi  Title           ctermfg=188
     hi  SpecialKey      ctermbg=234
     hi  NonText         ctermbg=233
-    hi  LineNr          ctermbg=233
+    "hi  LineNr          ctermbg=233
+    hi  LineNr          ctermbg=234
     hi  DiffText        ctermfg=81
     hi  Normal          ctermbg=233
     hi  DbgBreakPt      ctermbg=53
