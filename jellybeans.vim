@@ -18,6 +18,7 @@
 "               David Liang <bmdavll at gmail dot com>,
 "               Rich Healey (richoH),
 "               Andrew Wong (w0ng)
+"               HS: Added line number color change
 "
 " Copyright (c) 2009-2012 NanoTech
 "
